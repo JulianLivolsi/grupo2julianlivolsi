@@ -1,4 +1,4 @@
-# Estructura de Datos y Algoritmos I - 2025
+# Estructura de Datos y Algoritmos I - 2026
 structura de Datos y Algoritmos I, Universidad Nacional de Lujan
 ## UNLu Analista Universitario en Ciencias de Datos
 ## Materia: 11275 – Estructura de Datos y Algoritmos I, Plan de estudios: 20.01
@@ -10,4 +10,6 @@ structura de Datos y Algoritmos I, Universidad Nacional de Lujan
 ## Alumnos:
 
 Apellido y Nombre // Legajo // Mails
+
+Julian Livolsi // 187445 // julianlivolsi@outlook.com
 
