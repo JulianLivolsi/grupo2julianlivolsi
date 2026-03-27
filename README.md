@@ -12,4 +12,5 @@ structura de Datos y Algoritmos I, Universidad Nacional de Lujan
 Apellido y Nombre // Legajo // Mails
 
 Julian Livolsi // 187445 // julianlivolsi@outlook.com
+Melany Ortiz // 195337 // meluubari@gmail.com
 
