@@ -11,26 +11,25 @@
 como parámetro es un palíndromo.  Ej. “neuquen” ya que se lee igual de atrás hacia adelante.*/
 bool palindromo(char *cadena)
 {
-    int len = strlen(cadena);
-    if (len <= 1)
+    int len=strlen(cadena);
+    if (len<=1)
         return true;
-    if (cadena[0] != cadena[len - 1])
+    if (cadena[0] !=cadena[len-1])
         return false;
-    cadena[len - 1] = '\0';
-    return palindromo(cadena + 1);
+    cadena[len-1] ='\0';
+    return palindromo(cadena+1);
 }
 
 // Ejercicio 2
 /*2.	Dados dos números enteros m y n, construir una función recursiva que devuelva
 el producto de ambos, calculando el mismo como sumas sucesivas. Esto es: m*n=m+m+...+m, n veces. */
 
-int producto(int m, int n)
-{
-    if (n < 0)
-        return -producto(m, -n);
+int producto(int m,int n){
+    if (n<0)
+        return -producto(m,-n);
     if (n == 0)
         return 0;
-    return m + producto(m, n - 1);
+    return m+producto(m,n- 1);
 }
 
 // Ejercicio 3
@@ -38,11 +37,11 @@ int producto(int m, int n)
 
 int terminoSerieFibonacci(int k)
 {
-    if (k == 0)
+    if (k==0)
         return 0;
-    if (k == 1)
+    if (k== 1)
         return 1;
-    return terminoSerieFibonacci(k - 1) + terminoSerieFibonacci(k - 2);
+    return terminoSerieFibonacci(k-1)+ terminoSerieFibonacci(k-2);
 }
 
 // Ejercicio 4
@@ -50,61 +49,59 @@ int terminoSerieFibonacci(int k)
 cociente de ambos, calculando el mismo mediante restas sucesivas. Se deberá tener en cuenta que en el caso
 de que la división no sea exacta, se devolverán hasta 4 cifras decimales (si es necesario). */
 
-static float divisionAux(int m, int n, float escala, int decimalesRestantes)
-{
-    if (m == 0)
+static float divisionAux(int m,int n, float escala,int decimalesRestantes){
+    if (m ==0)
         return 0;
-    if (m < n)
-    {
-        if (decimalesRestantes == 0)
+    if (m<n){
+        if (decimalesRestantes== 0)
             return 0;
-        return divisionAux(m * 10, n, escala * 10, decimalesRestantes - 1);
+        return divisionAux(m *10,n,escala*10, decimalesRestantes-1);
     }
-    return (float)(m / n) / escala + divisionAux(m % n, n, escala * 10, decimalesRestantes - 1);
+    return (float)(m /n)/escala+divisionAux(m %n, n,escala*10, decimalesRestantes-1);
 }
 
 float division(int m, int n)
 {
-    bool negativo = (m < 0) != (n < 0);
-    if (m < 0)
-        m = -m;
-    if (n < 0)
-        n = -n;
-    float resultado = divisionAux(m, n, 1.0f, 4);
+    bool negativo = (m <0)!=(n<0);
+    if (m<0)
+        m=-m;
+    if (n<0)
+        n= -n;
+    float resultado =divisionAux(m,n, 1.0f,4);
     return negativo ? -resultado : resultado;
 }
 
 // Ejercicio 5
 /*5.	Generar un algoritmo recursivo que le ponga los “.” de los miles a un String de números.*/
 
-static void milesAux(char *num, int pos, int len, char *resultado)
+static void milesAux(char *num,int pos,int len, char *resultado)
 {
-    if (pos == len)
+    if (pos==len)
         return; // caso base: llegamos al final
 
-    milesAux(num, pos + 1, len, resultado); // nos hundimos hasta el fondo
+    milesAux(num,pos+1,len, resultado); // nos hundimos hasta el fondo
 
     // vuelta atrás: escribimos el dígito actual
-    int idx = strlen(resultado);
-    resultado[idx] = num[pos];
-    resultado[idx + 1] = '\0';
+    int idx =strlen(resultado);
+    resultado[idx]= num[pos];
+    resultado[idx+ 1]='\0';
 
     // cuántos dígitos quedan a la derecha de esta posición
-    int desde_derecha = len - pos;
+    int desde_derecha= len-pos;
     // si es múltiplo de 3 Y no es el último dígito escrito → punto
-    if (desde_derecha % 3 == 0 && pos != 0)
+    if (desde_derecha %3 ==0 && pos!= 0)
     {
-        int idx2 = strlen(resultado);
-        resultado[idx2] = '.';
-        resultado[idx2 + 1] = '\0';
+        int idx2 =strlen(resultado);
+        resultado[idx2]= '.';
+        resultado[idx2 +1] ='\0';
     }
 }
 
 char *agregarSeparadorMiles(char numero[])
 {
     static char buf[64];
-    buf[0] = '\0';
-    milesAux(numero, 0, strlen(numero), buf);
+    buf[0] ='\0';
+    milesAux(numero,0, strlen(numero),buf);
     return buf;
 }
 
