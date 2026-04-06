@@ -168,8 +168,21 @@ divisiblePor7 (32291) => verdadero
 11 -> No múltiplo de 7
 divisiblePor7 (110) => falso
 */
+bool verificar(int num) {
+    int res=num%7;
+    if(res==0){ 
+        return true;
+    }else{
+        return false;}}
 
-bool divisiblePor7(int n);
+bool divisiblePor7(int num){ 
+    if (num<70){ 
+        return verificar(num);
+    }else{
+        int x=num%10; 
+        int restante=num/10; 
+        int nuevo=restante-(x*2);          
+        divisiblePor7(nuevo);}}
 
 // Ejercicio 10
 /*
