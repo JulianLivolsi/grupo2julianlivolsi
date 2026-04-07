@@ -206,7 +206,40 @@ explosion(20, 5) => [4 3 2 2 1 1 1 1 5]
 
 NOTA: Se utilizará el valor -1 como entero que indica el final del arreglo devuelto por la función.
 */
+int longitud(int *arr){
+    int i=0;
+    while (arr[i]!=-1){
+        i++;}
+    return i;}
 
-int *explosion(int n, int b);
+int* explosion(int n,int b) {
+    if (n<=b){
+        int *res=(int*) malloc(2*sizeof(int));
+        res[0]=n;
+        res[1]=-1;
+        return res;}
+
+    int n1=n/b;
+    int n2=n-n1;
+
+    int *res1=explosion(n1,b);
+    int *res2=explosion(n2,b);
+
+    int larg1=longitud(res1);
+    int larg2=longitud(res2);
+
+    int *resultado=(int*) malloc((larg1+larg2+1)*sizeof(int));
+
+    for (int i=0; i<larg1; i++){
+        resultado[i]= res1[i];}
+
+    for (int i=0; i<larg2; i++) {
+        resultado[larg1+i] =res2[i];}
+
+    resultado[larg1+larg2]=-1;
+
+    free(res1);
+    free(res2);
+    return resultado;}
 
 #endif
