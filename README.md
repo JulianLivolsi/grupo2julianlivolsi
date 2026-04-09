@@ -6,7 +6,7 @@ Estructura de Datos y Algoritmos I, Universidad Nacional de Lujan
 #### Equipo docente
 ##### Perello Mario – Profesor Adjunto
 ##### Racker José – Ayudante de 1era
-## N° de grupo: 
+## N° de grupo: 2
 ## Alumnos:
 
 Apellido y Nombre // Legajo // Mails
