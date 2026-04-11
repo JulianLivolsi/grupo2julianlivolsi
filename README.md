@@ -23,6 +23,6 @@ Esteban Ramiro Planas // 182710 // estebanramiroplanas@gmail.com
 
 Juan Segundo Evers // 174231 // jse.unlu@gmail.com
 
-Maria Rosario Dovico // 206585 // 
+Maria Rosario Dovico // 206585 // rochinamiro@gmail.com
 
 
