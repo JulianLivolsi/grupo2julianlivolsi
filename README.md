@@ -19,3 +19,6 @@ Agustin Marcos // 194512 // agustin327@outlook.com.ar
 
 Matias Gonzalez Balbi // 205631 // mrgnzbalbi@gmail.com
 
+Esteban Ramiro Planas // 182710 // estebanramiroplanas@gmail.com
+
+
