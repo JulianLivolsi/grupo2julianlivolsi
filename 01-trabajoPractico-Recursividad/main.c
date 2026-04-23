@@ -5,7 +5,7 @@
 #include <string.h>
 #include <ctype.h>
 
-#include "TP_1_RECURSIVIDAD.h"
+#include "tp_1_recursividad.h"
 #include "../libs/validaciones/headers/AUXILIARES.h"
 
 #define MAXSTRINGLENGTH 100
