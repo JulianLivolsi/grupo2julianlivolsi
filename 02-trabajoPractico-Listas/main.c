@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "tp_2_listas.h"
-#include "ejercicios_tp_2.h"
+#include "tp_2_ejjercicios.h"
 
 
 int main()
