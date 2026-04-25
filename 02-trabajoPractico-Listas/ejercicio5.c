@@ -101,16 +101,16 @@ int ejercicio5()
     printf("\n### Seleccione una opcion ###");
     while (1)
     {
-        int tipo = leer_entero("\nHallar un Valor del polinomio [0] | Hallar Valores en un rango [1]: ", 0, 1);
+        int tipo = pedirEntero("\nHallar un Valor del polinomio [0] | Hallar Valores en un rango [1]: ", 0, 1);
         if (tipo == 0) {
-            float valorDeX = leer_float("Ingrese el valor de x: ", -100.0, 100.0); 
+            float valorDeX = pedirFloat("Ingrese el valor de x: ", -100.0, 100.0); 
             float resultado = evaluarPolinomio(lista1,valorDeX);
             printf("El resultado de usar como valor 'x' a %.3f en el polinomio es de: %.3f",valorDeX,resultado);
 
         } else if (tipo == 1) {
-            float cotaInf = leer_float("Ingrese la cota inferiro del rango: ", -200.0, 199.0);
-            float cotaSup = leer_float("Ingrese la cota superior del rango: ", -199.0, 200.0);
-            float pazo = leer_float("Ingrese el sumando de los valores: ", 0.1, 100.0);
+            float cotaInf = pedirFloat("Ingrese la cota inferiro del rango: ", -200.0, 199.0);
+            float cotaSup = pedirFloat("Ingrese la cota superior del rango: ", -199.0, 200.0);
+            float pazo = pedirFloat("Ingrese el sumando de los valores: ", 0.1, 100.0);
             printf("\nvalores desde %.2f hasta %.2f de a paso %.2f son\n-> ", cotaInf, cotaSup, pazo);
             Lista valores = calcularRango(lista1, cotaInf, cotaSup, pazo);
             
@@ -123,11 +123,11 @@ int ejercicio5()
                 xActual += pazo;
             }
         }
-        int cont = leer_entero("\nContinuar con el mismo polinomio(0) | Seguir(1): ", 0, 1);
+        int cont = pedirEntero("\nContinuar con el mismo polinomio(0) | Seguir(1): ", 0, 1);
         if (cont == 1)
             break;
     }
-    int continuar = leer_entero("\nSalir (0) | Ingresar otro Polinomio (1): ",0,1);
+    int continuar = pedirEntero("\nSalir (0) | Ingresar otro Polinomio (1): ",0,1);
     if (continuar == 1)
         ejercicio5();
     else

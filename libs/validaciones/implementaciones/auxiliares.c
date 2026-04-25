@@ -34,6 +34,31 @@ int pedirEntero(char mensaje[], int min, int max)
     return valor;
 }
 
+int pedirFloat(char mensaje[], int min, int max){
+    char buffer[100];
+    char* endptr;
+    float numero;
+    //while (getchar() != '\n');
+    while (1) {
+        printf("%s", mensaje);
+        if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
+            printf("Error al leer entrada.\n");
+            continue;
+        }
+        buffer[strcspn(buffer, "\n")] = 0;  
+        numero = strtof(buffer, &endptr);  
+        if (endptr != buffer && *endptr == '\0') {
+            if (numero >= min && numero <= max) {
+                return numero;  
+            } else {
+                printf("Número fuera de rango [%.2f - %.2f].\n", min, max);
+            }
+        } else {
+            printf("Entrada inválida. Ingrese un número flotante.\n");
+        }
+    }
+}
+
 int mostrarMenu(const char *titulo, const char *opciones[], int cantidadOpciones)
 {
     system("cls");
@@ -96,4 +121,13 @@ void pedirCadena(char mensaje[], char buffer[], int max_len)
             esValido = 0;
         }
     } while (!esValido);
+}
+
+void limpiarConsola()
+{
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
 }

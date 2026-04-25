@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "tp_2_listas.h"
-#include "tp_2_ejjercicios.h"
+#include "tp_2_ejercicios.h"
 
 
 int main()
@@ -11,11 +11,11 @@ int main()
     {
         limpiarConsola();
         printf("\n------ Menu TP2: Listas ------\n");
-        eleccion = leer_entero("Seleccione el ejercicio a ejecutar [2-6] | [0] para salir: ", 0, 6);
+        eleccion = pedirEntero("Seleccione el ejercicio a ejecutar [2-6] | [0] para salir: ", 0, 6);
         while (eleccion == 1)
         {
             printf("Entrada inválida. Ingrese otro entero\n");
-            eleccion = leer_entero("Seleccione el ejercicio a ejecutar [2-6] | [0] para salir): ", 0, 6);
+            eleccion = pedirEntero("Seleccione el ejercicio a ejecutar [2-6] | [0] para salir): ", 0, 6);
         }
         if (eleccion == 0)
         {

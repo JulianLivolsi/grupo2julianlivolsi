@@ -10,6 +10,9 @@
 // Valida que la entrada sea un entero, recibe mensaje para el usuario, minimo y maximo del ingreso
 int pedirEntero(char mensaje[], int min, int max);
 
+// Valida que la entrada sea un entero, recibe mensaje para el usuario, minimo y maximo del ingreso
+int pedirFloat(char mensaje[], int min, int max);
+
 // Muestra el menu
 int mostrarMenu(const char *titulo, const char *opciones[], int cantidadOpciones);
 
@@ -18,5 +21,7 @@ void limpiarBuffer();
 
 // Valida que la entrada sea una cadena, recibe mensaje para el usuario, destino y longitud maxima
 void pedirCadena(char mensaje[], char buffer[], int max_len);
+ 
+void limpiarConsola();
 
 #endif // AUXILIARES_H

@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 //#include "..\Tipos\tipo_elemento.h"
-#include "..\..\tipoElemento\headers\tipo_elemento.h"
+#include "../../tipoElemento/headers/tipo_elemento.h"
 
 static const int TAMANIO_MAXIMO = 100;
 
