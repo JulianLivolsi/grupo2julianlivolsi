@@ -3,7 +3,9 @@
 #include <stdbool.h>
 #include <time.h>
 #include <math.h>
+
 #include "tp_2_listas.h"
+#include "../libs/validaciones/headers/AUXILIARES.h"
 
 void hacerPolinomio(Lista list)
 {
