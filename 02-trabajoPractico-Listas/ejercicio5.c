@@ -70,6 +70,7 @@ Lista calcularRango(Lista list, double x, double y, double sumando)
 
 int ejercicio5()
 {
+    limpiarConsola();
     printf("\n------ Ejercicio 5: polinomio ------\n");
     printf("Ingrese en la lista los coeficientes del polinomio (desde el grado mas alto hasta x^0) \n-> ");
     Lista lista1 = l_crear();
@@ -103,12 +104,12 @@ int ejercicio5()
     {
         int tipo = pedirEntero("\nHallar un Valor del polinomio [0] | Hallar Valores en un rango [1]: ", 0, 1);
         if (tipo == 0) {
-            float valorDeX = pedirFloat("Ingrese el valor de x: ", -100.0, 100.0); 
+            float valorDeX = pedirFloat("\nIngrese el valor de x: ", -100.0, 100.0); 
             float resultado = evaluarPolinomio(lista1,valorDeX);
-            printf("El resultado de usar como valor 'x' a %.3f en el polinomio es de: %.3f",valorDeX,resultado);
+            printf("\nEl resultado de usar como valor 'x' a %.3f en el polinomio es de: %.3f",valorDeX,resultado);
 
         } else if (tipo == 1) {
-            float cotaInf = pedirFloat("Ingrese la cota inferiro del rango: ", -200.0, 199.0);
+            float cotaInf = pedirFloat("\nIngrese la cota inferiro del rango: ", -200.0, 199.0);
             float cotaSup = pedirFloat("Ingrese la cota superior del rango: ", -199.0, 200.0);
             float pazo = pedirFloat("Ingrese el sumando de los valores: ", 0.1, 100.0);
             printf("\nvalores desde %.2f hasta %.2f de a paso %.2f son\n-> ", cotaInf, cotaSup, pazo);
