@@ -34,7 +34,7 @@ int pedirEntero(char mensaje[], int min, int max)
     return valor;
 }
 
-int pedirFloat(char mensaje[], int min, int max){
+int pedirFloat(const char* mensaje, float min, float max){
     char buffer[100];
     char* endptr;
     float numero;
@@ -61,7 +61,7 @@ int pedirFloat(char mensaje[], int min, int max){
 
 int mostrarMenu(const char *titulo, const char *opciones[], int cantidadOpciones)
 {
-    system("cls");
+    //system("cls"); "cls solo sirve para winsows"
     
     // Imprimimos el título dinámico
     printf("-- %s --\n\n", titulo);
