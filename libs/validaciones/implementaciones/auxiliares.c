@@ -4,6 +4,7 @@
 #include <ctype.h>
 
 #include "../headers/AUXILIARES.h"
+#include "../../listas/headers/listas.h"
 
 int pedirEntero(char mensaje[], int min, int max)
 {
@@ -130,4 +131,38 @@ void limpiarConsola()
 #else
     system("clear");
 #endif
+}
+
+// Listas
+
+Lista rellenarLista(int elementos)
+{
+    // llena una lista. el parametro elementos representa el largo de la lista
+    // si elementos es pasado con el como -1 pregunta el largo al usuario
+    if (elementos == -1)
+    {
+        elementos = pedirEntero("Cual es el largo de esta lista: ", 1, 100);
+    }
+    Lista resultado = l_crear();
+    int aleatorio = pedirEntero("Queire llenar la lista aleatoriamente? -> No(0) | Si(1): ", 0, 1);
+    if (aleatorio == 1)
+    {
+        for (int j = 0; j < elementos; j++)
+        {
+            TipoElemento random = te_crear(rand() % 20);
+            l_agregar(resultado, random);
+        }
+    }
+    else
+    {
+        for (int j = 0; j < elementos; j++)
+        {   
+            char mensaje[100];
+            sprintf(mensaje, "Ingrese el elemento %i: ", j + 1);
+            int elem = pedirEntero(mensaje, -1000, 1000);
+            TipoElemento elemento = te_crear(elem);
+            l_agregar(resultado, elemento);
+        }
+    }
+    return resultado;
 }

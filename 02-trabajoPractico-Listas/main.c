@@ -28,9 +28,9 @@ int main()
             // case 2:
             //     ejercicio2();
             //     break;
-            // case 3:
-            //     ejercicio3();
-            //     break;
+            case 3:
+                ejercicio3();
+                break;
             // case 4:
             //     ejercicio4();
             //     break;

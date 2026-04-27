@@ -1,3 +1,5 @@
+#include "../../listas/headers/listas.h"
+
 #ifndef AUXILIARES_H
 #define AUXILIARES_H
 
@@ -23,5 +25,9 @@ void limpiarBuffer();
 void pedirCadena(char mensaje[], char buffer[], int max_len);
  
 void limpiarConsola();
+
+// LISTAS
+
+Lista rellenarLista(int elementos);
 
 #endif // AUXILIARES_H
