@@ -3,11 +3,10 @@
 #include "../libs/tipoElemento/headers/tipo_elemento.h"
 #include "../libs/validaciones/headers/AUXILIARES.h"
 
-
 #ifndef TP_2_Listas
 #define TP_2_Listas
 
-// P2
+// ---- Tipos auxiliares ----
 
 typedef struct resultadoStruct
 {
@@ -23,44 +22,46 @@ typedef struct resultadoPromedio
     float prom2;
 } ResultadoPromedioAmbasListas;
 
-// Punto 2 a y b
+// ---- Ejercicio 2 ----
+
+// a: elementos de L1 que no estan en L2
 Lista verElementosQueNoSeRepitenA(Lista l1, Lista l2);
+// b: elementos de L2 que no estan en L1
 Lista verElementosQueNoSeRepitenB(Lista l1, Lista l2);
-// Punto 2 C
+// c: elementos comunes a ambas listas
 Lista verElementosRepetidos(Lista l1, Lista l2);
-// Punto 2 D
+// d: promedio de cada lista
 float promedio(Lista l1);
-// Punto 2 E
+ResultadoPromedioAmbasListas promedioAmbasListas(Lista l1, Lista l2);
+// e: valor minimo de cada lista y su posicion
 ResultadoValorMinimo valorMinimo(Lista l1, Lista l2);
 
-// P3
+// ---- Ejercicio 3 ----
+
 typedef struct
 {
     bool esMultiplo;
     bool escalar;
     int numEscalar;
 } ResultadosMul;
+
 ResultadosMul multiplo(Lista l1, Lista l2);
 
-// P4 Retorna 1 si L1 > L2, 2 si L2 > L1, 0 si son iguales
-int CompararListas(Lista l1, Lista L2);
+// ---- Ejercicio 4 ----
+// Retorna 1 si L1 > L2, 2 si L2 > L1, 0 si son iguales
+int CompararListas(Lista l1, Lista l2);
 
-// P5
-/*Función que recibe una lista vacía y la carga con los términos del polinomio; los 
-mismos tendrán el exponente o grado del término (entero mayor o igual a 0) en "clave" y el coeficiente real 
-apuntado por "valor". */
+// ---- Ejercicio 5 ----
+
+// Carga los coeficientes del polinomio en la lista (mayor grado primero)
 void hacerPolinomio(Lista list);
-/*Función que recibe el polinomio y un número real y devuelve el valor del polinomio 
-evaluado en ese valor de x.*/
-float evaluarPoliomio(Lista list, float x);
-/*Función que calcula el polinomio en un rango de valores de x.
-Recibe: el polinomio, los valores mínimo y máximo del intervalo y la diferencia entre cada valor 
-tomado del intervalo.
-Devuelve: una lista de valores reales apuntados por "valor", y que representan los 
-valores del polinomio en los sucesivos puntos del intervalo.*/
+// Evalua el polinomio en el valor x
+float evaluarPolinomio(Lista list, float x);
+// Calcula el polinomio en un rango de valores de x con paso sumando
 Lista calcularRango(Lista list, double x, double y, double sumando);
 
-// P6
+// ---- Ejercicio 6 ----
+// Retorna true si L2 es sublista de L1 (todos los elementos de L2 estan en L1)
 bool esSublista(Lista l1, Lista l2);
 
 #endif // TP_2_Listas
