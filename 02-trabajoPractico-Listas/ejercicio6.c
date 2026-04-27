@@ -61,8 +61,6 @@ void ejercicio6()
         else
             printf("\nL2 NO es sublista de L1: hay al menos un elemento de L2 que no esta en L1.\n");
 
-        printf("\nComplejidad algoritmica: O(N * M), donde N = longitud de L2 y M = longitud de L1.\n");
-
         continuar = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
     } while (continuar == 1);
 }

@@ -144,7 +144,7 @@ Lista rellenarLista(int elementos)
         elementos = pedirEntero("Cual es el largo de esta lista: ", 1, 100);
     }
     Lista resultado = l_crear();
-    int aleatorio = pedirEntero("Queire llenar la lista aleatoriamente? -> No(0) | Si(1): ", 0, 1);
+    int aleatorio = pedirEntero("Quiere llenar la lista aleatoriamente? -> No(0) | Si(1): ", 0, 1);
     if (aleatorio == 1)
     {
         for (int j = 0; j < elementos; j++)
