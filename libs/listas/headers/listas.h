@@ -31,6 +31,8 @@ bool l_insertar(Lista lista, TipoElemento elemento, int pos);
 
 bool l_eliminar(Lista lista, int pos);
 
+bool l_destruir(Lista L);
+
 TipoElemento l_recuperar(Lista lista, int pos);
 
 void l_mostrar(Lista lista);
