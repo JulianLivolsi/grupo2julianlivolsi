@@ -30,23 +30,23 @@ ResultadosMul multiplo(Lista l1, Lista l2)
         TipoElemento e1 = siguiente(it1); // Sacamos los elementos y avanzamos el iterador un paso
         TipoElemento e2 = siguiente(it2);
 
-        if (e2->clave == 0) // Verifica que no divida por 0
+        if (e1->clave == 0) // Verifica que no divida por 0
         { 
-            if (e1->clave != 0) // Si la clave del otro elemento no es 0, no son multiplo
+            if (e2->clave != 0) // Si la clave del otro elemento no es 0, no son multiplo
             {
                 todosMultiplos = false;
                 break;
             }
             continue; 
         }
-        if (e1->clave % e2->clave != 0) // Verifica si NO es multiplo
+        if (e2->clave % e1->clave != 0) // Verifica si NO es multiplo
         { 
             todosMultiplos = false;
             esEscalar = false;
             break; 
         }
 
-        int k_actual = e1->clave / e2->clave; // Verifica la logica del escalar
+        int k_actual = e2->clave / e1->clave; // Verifica la logica del escalar
 
         if (primerElemento)
         {
@@ -118,7 +118,7 @@ void ejercicio3()
         srand(time(NULL));
 
         printf("\n----- Ejercicio 3: Multiplo -----");
-        int largo = pedirEntero("Ingrese el largo de las listas (para que sean multiplo ambas tienen el mismo): ", 1, 100);
+        int largo = pedirEntero("\nIngrese el largo de las listas (para que sean multiplo ambas tienen el mismo): ", 1, 100);
 
         Lista l1 = rellenarLista(largo); // Esta funcion auxiliar usa l_crear y rellena los elementos con 
         Lista l2 = rellenarLista(largo);

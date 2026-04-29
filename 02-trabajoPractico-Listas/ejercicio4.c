@@ -74,7 +74,7 @@ void ejercicio4()
         else
             printf("\nL1 = L2: ambas listas tienen la misma cantidad de claves mayores.\n");
 
-        printf("\nComplejidad algoritmica: O(N), donde N es la longitud de la lista mas corta.\n");
+        printf("\n --- Complejidad algoritmica: O(N), donde N es la longitud de las listas. ---\n");
 
         continuar = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
     } while (continuar == 1);

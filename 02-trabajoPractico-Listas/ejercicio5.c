@@ -9,7 +9,7 @@
 void hacerPolinomio(Lista list)
 {
     int tamanio = 0;
-    printf("Ingrese el tamaño que tendra la lista: ");
+    printf("Ingrese el tamano que tendra la lista: ");
     int valido = scanf("%d", &tamanio);
     while (valido != 1 || (tamanio< 1 || tamanio>100)) {
         printf("Tamaño inválido. Ingrese un número entre 1 y 100:\n");
@@ -110,7 +110,7 @@ int ejercicio5()
             printf("\nEl resultado de usar como valor 'x' a %.3f en el polinomio es de: %.3f",valorDeX,resultado);
 
         } else if (tipo == 1) {
-            float cotaInf = pedirFloat("\nIngrese la cota inferiro del rango: ", -200.0, 199.0);
+            float cotaInf = pedirFloat("\nIngrese la cota inferior del rango: ", -200.0, 199.0);
             float cotaSup = pedirFloat("Ingrese la cota superior del rango: ", -199.0, 200.0);
             float pazo = pedirFloat("Ingrese el sumando de los valores: ", 0.1, 100.0);
             printf("\nvalores desde %.2f hasta %.2f de a paso %.2f son\n-> ", cotaInf, cotaSup, pazo);
