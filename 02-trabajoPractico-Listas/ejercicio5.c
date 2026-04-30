@@ -6,24 +6,36 @@
 
 #include "tp_2_listas.h"
 
+// void hacerPolinomio(Lista list)
+// {
+//     int tamanio = 0;
+//     printf("Ingrese el tamano que tendra la lista: ");
+//     int valido = scanf("%d", &tamanio);
+//     while (valido != 1 || (tamanio< 1 || tamanio>100)) {
+//         printf("Tamaño inválido. Ingrese un número entre 1 y 100:\n");
+//         while (getchar() != '\n'); 
+//         valido = scanf("%d", &tamanio); 
+//     }
+
+//     for (int i = 0; i < tamanio;i++) {
+//         int elemento;
+//         printf("\nIngrese el elemento %d en la lista: ", i+1);
+//         while (scanf("%d", &elemento) != 1){
+//             printf("Ingresaste algo que no es un numero. Por favor, ingrese un numero.\n");
+//             while (getchar() != '\n');
+//         }
+//         TipoElemento elementoDefinitivo = te_crear(elemento);
+//         l_agregar(list, elementoDefinitivo);
+//     }
+// }
+
 void hacerPolinomio(Lista list)
 {
-    int tamanio = 0;
-    printf("Ingrese el tamano que tendra la lista: ");
-    int valido = scanf("%d", &tamanio);
-    while (valido != 1 || (tamanio< 1 || tamanio>100)) {
-        printf("Tamaño inválido. Ingrese un número entre 1 y 100:\n");
-        while (getchar() != '\n'); 
-        valido = scanf("%d", &tamanio); 
-    }
-
+    int tamanio = pedirEntero("Ingrese el tamano que tendra la lista: ",1,100);
     for (int i = 0; i < tamanio;i++) {
-        int elemento;
-        printf("\nIngrese el elemento %d en la lista: ", i+1);
-        while (scanf("%d", &elemento) != 1){
-            printf("Ingresaste algo que no es un numero. Por favor, ingrese un numero.\n");
-            while (getchar() != '\n');
-        }
+        char mensaje[100];
+        sprintf(mensaje, "\nIngrese el elemento %d en la lista: ", i + 1);
+        int elemento = pedirEntero(mensaje, -1000, 1000);
         TipoElemento elementoDefinitivo = te_crear(elemento);
         l_agregar(list, elementoDefinitivo);
     }
