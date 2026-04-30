@@ -6,24 +6,36 @@
 
 #include "tp_2_listas.h"
 
+// void hacerPolinomio(Lista list)
+// {
+//     int tamanio = 0;
+//     printf("Ingrese el tamano que tendra la lista: ");
+//     int valido = scanf("%d", &tamanio);
+//     while (valido != 1 || (tamanio< 1 || tamanio>100)) {
+//         printf("Tamaño inválido. Ingrese un número entre 1 y 100:\n");
+//         while (getchar() != '\n'); 
+//         valido = scanf("%d", &tamanio); 
+//     }
+
+//     for (int i = 0; i < tamanio;i++) {
+//         int elemento;
+//         printf("\nIngrese el elemento %d en la lista: ", i+1);
+//         while (scanf("%d", &elemento) != 1){
+//             printf("Ingresaste algo que no es un numero. Por favor, ingrese un numero.\n");
+//             while (getchar() != '\n');
+//         }
+//         TipoElemento elementoDefinitivo = te_crear(elemento);
+//         l_agregar(list, elementoDefinitivo);
+//     }
+// }
+
 void hacerPolinomio(Lista list)
 {
-    int tamanio = 0;
-    printf("Ingrese el tamano que tendra la lista: ");
-    int valido = scanf("%d", &tamanio);
-    while (valido != 1 || (tamanio< 1 || tamanio>100)) {
-        printf("Tamaño inválido. Ingrese un número entre 1 y 100:\n");
-        while (getchar() != '\n'); 
-        valido = scanf("%d", &tamanio); 
-    }
-
+    int tamanio = pedirEntero("Ingrese el tamano que tendra la lista: ",1,100);
     for (int i = 0; i < tamanio;i++) {
-        int elemento;
-        printf("\nIngrese el elemento %d en la lista: ", i+1);
-        while (scanf("%d", &elemento) != 1){
-            printf("Ingresaste algo que no es un numero. Por favor, ingrese un numero.\n");
-            while (getchar() != '\n');
-        }
+        char mensaje[100];
+        sprintf(mensaje, "\nIngrese el elemento %d en la lista: ", i + 1);
+        int elemento = pedirEntero(mensaje, -1000, 1000);
         TipoElemento elementoDefinitivo = te_crear(elemento);
         l_agregar(list, elementoDefinitivo);
     }
@@ -105,14 +117,14 @@ int ejercicio5()
     {
         int tipo = pedirEntero("\nHallar un Valor del polinomio [0] | Hallar Valores en un rango [1]: ", 0, 1);
         if (tipo == 0) {
-            float valorDeX = pedirFloat("\nIngrese el valor de x: ", -100.0, 100.0); 
+            float valorDeX = pedirFloat("\nIngrese el valor de x: ", -1000.00, 1000.00); 
             float resultado = evaluarPolinomio(lista1,valorDeX);
             printf("\nEl resultado de usar como valor 'x' a %.3f en el polinomio es de: %.3f",valorDeX,resultado);
 
         } else if (tipo == 1) {
-            float cotaInf = pedirFloat("\nIngrese la cota inferior del rango: ", -200.0, 199.0);
-            float cotaSup = pedirFloat("Ingrese la cota superior del rango: ", -199.0, 200.0);
-            float pazo = pedirFloat("Ingrese el sumando de los valores: ", 0.1, 100.0);
+            float cotaInf = pedirFloat("\nIngrese la cota inferior del rango: ", -2000.0, 1999.0);
+            float cotaSup = pedirFloat("Ingrese la cota superior del rango: ", -1999.0, 2000.0);
+            float pazo = pedirFloat("Ingrese el sumando de los valores: ", 0.01, 1000.0);
             printf("\nvalores desde %.2f hasta %.2f de a paso %.2f son\n-> ", cotaInf, cotaSup, pazo);
             Lista valores = calcularRango(lista1, cotaInf, cotaSup, pazo);
             

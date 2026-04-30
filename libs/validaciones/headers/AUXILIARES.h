@@ -13,7 +13,7 @@
 int pedirEntero(char mensaje[], int min, int max);
 
 // Valida que la entrada sea un entero, recibe mensaje para el usuario, minimo y maximo del ingreso
-int pedirFloat(const char* mensaje, float min, float max);
+float pedirFloat(const char* mensaje, float min, float max);
 
 // Muestra el menu
 int mostrarMenu(const char *titulo, const char *opciones[], int cantidadOpciones);

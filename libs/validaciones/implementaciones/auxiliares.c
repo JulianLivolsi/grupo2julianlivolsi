@@ -35,11 +35,10 @@ int pedirEntero(char mensaje[], int min, int max)
     return valor;
 }
 
-int pedirFloat(const char* mensaje, float min, float max){
+float pedirFloat(const char* mensaje, float min, float max){
     char buffer[100];
     char* endptr;
     float numero;
-    //while (getchar() != '\n');
     while (1) {
         printf("%s", mensaje);
         if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
