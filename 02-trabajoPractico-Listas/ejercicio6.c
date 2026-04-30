@@ -14,8 +14,11 @@
  * Se considera sublista si cada elemento de L2 (por clave) aparece en L1,
  * sin importar el orden ni la posicion. La comparacion es solo por clave.
  *
- * Complejidad: O(N * M), donde N = longitud de L2 y M = longitud de L1.
- * Por cada elemento de L2 se realiza una busqueda lineal en L1 (l_buscar = O(M)).
+ * Complejidad: O(N * (N + M)), donde N = longitud de L2 y M = longitud de L1.
+ * El loop recorre N elementos de L2. Por cada iteracion:
+ *   - l_recuperar(l2, i) cuesta O(N) al ser lista enlazada.
+ *   - l_buscar(l1, clave) cuesta O(M) al ser busqueda lineal en L1.
+ * Resultado: N * (N + M) = O(N^2 + N*M). Complejidad O(N^2)
  */
 bool esSublista(Lista l1, Lista l2)
 {
@@ -60,6 +63,8 @@ void ejercicio6()
             printf("\nL2 ES sublista de L1: todos los elementos de L2 se encuentran en L1.\n");
         else
             printf("\nL2 NO es sublista de L1: hay al menos un elemento de L2 que no esta en L1.\n");
+        
+        printf("\n --- Complejidad algoritmica: O(N^2) ---\n");
 
         continuar = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
     } while (continuar == 1);
