@@ -42,7 +42,7 @@ int ejercicio5()
     p_mostrar(invertida);
     printf("\nPila original: ");
     p_mostrar(pila);
-    printf(\
+    printf(
         "\nLa complejidad algoritmica de esta funcion es de 0(n). Es decir, complejidad lineal."
         "Esto es asi ya que los dos bucles 'while' recorren una sola vez, de manera secuencial, las 2 pilas. Ya sea para crear la pila invertida o para restaurar la pila original." 
         "Pero al no haber una utilizacion de ciclos anidados ni operaciones costosas por elemento, el número total de operaciones crece linealmente con respecto a la cantidad de elementos de las pilas."
