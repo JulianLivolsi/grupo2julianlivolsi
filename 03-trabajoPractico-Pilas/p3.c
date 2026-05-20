@@ -51,7 +51,7 @@ int ejercicio3()
     printf("\nPila 2: \n");
     p_mostrar(p2);
     printf("\n--> Las pilas son %s\n", p_ej3_iguales(p1, p2) ? "IGUALES" : "DIFERENTES");
-    printf(\
+    printf(
         "\nLa complejidad algoritmica de esta funcion es de 0(n). Es decir, complejidad lineal."
         "Esto es asi ya que los dos bucles 'for' recorren una sola vez, de manera secuencial, las 2 pilas. Ya sea para desarmarlas y comparar elementos o para restaurarlas."
         "Pero al no haber una utilizacion de ciclos anidados ni operaciones costosas por elemento, el número total de operaciones crece linealmente con respecto a la cantidad de elementos de las pilas."
@@ -61,7 +61,7 @@ int ejercicio3()
 
     int eleccion = leer_entero("\nSalir (0) | Continuar (1): ", 0, 1);
     if (eleccion == 1)
-        ejercicio3();
+        ejercicio3();   //¿ deberia ser return ejercicio3(); ?
     else if (eleccion == 0)
         return 0;
 }
