@@ -27,7 +27,7 @@ bool p_ej3_iguales(Pila p1, Pila p2){
         p_apilar(aux, elem1);
         p_apilar(aux, elem2);
     }
-    for ( int i; i < tamanio1; i++)
+    for ( int i = 0; i < tamanio1; i++)
     {
         elem2 = p_desapilar(aux);
         elem1 = p_desapilar(aux);
