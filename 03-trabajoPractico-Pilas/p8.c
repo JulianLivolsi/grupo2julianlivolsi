@@ -113,5 +113,5 @@ void ejercicio8(){
     if (eleccion == 1)
         ejercicio8();
     else if (eleccion == 0)
-        printf("Saliendo del ejercicio3.");
+        printf("Saliendo del ejercicio8.");
 }
