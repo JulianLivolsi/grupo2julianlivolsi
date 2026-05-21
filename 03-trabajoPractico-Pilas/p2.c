@@ -282,7 +282,7 @@ void ejercicio2()
     int eleccion = -1;
     while (eleccion != 0)
     {
-        eleccion = leer_entero("\n\nSeleccione el ejercicio: A[Eliga 1], B[Eliga 2], C[Eliga 3], D[Eliga 4], E[Eliga 5], F[Eliga 6], (Eliga 0 para salir): ", 0, 6);
+        eleccion = pedirEntero("\n\nSeleccione el ejercicio: A[Eliga 1], B[Eliga 2], C[Eliga 3], D[Eliga 4], E[Eliga 5], F[Eliga 6], (Eliga 0 para salir): ", 0, 6);
         Pila auxiliar = p_crear();
         Pila NuevaPila = p_crear();
         int clave;
@@ -295,7 +295,7 @@ void ejercicio2()
             printf("\nPila origina: \n");
             p_mostrar(auxiliar);
             printf("\n");
-            clave = leer_entero("Ingrese una clave a buscar: ", -1000, 1000);
+            clave = pedirEntero("Ingrese una clave a buscar: ", -1000, 1000);
             if (p_ej2_existeclave(auxiliar, clave))
             {
                 printf("\nLa clave ingresada EXISTE dentro de la pila.");
@@ -311,8 +311,8 @@ void ejercicio2()
             printf("\nEjercicio B: Colocar en una posicion ordinal determinada, recibida por parámetro, un nuevo elemento (Insertar un elemento nuevo):\n");
             printf("\nPila original\n");
             p_mostrar(auxiliar);
-            int posicion = leer_entero("Ingrese la posicion en donde insertar (empezando desde 1): ", 1, p_tamanio(pila) + 1);
-            clave = leer_entero("Ingrese la nueva clave: ", -1000, 1000);
+            int posicion = pedirEntero("Ingrese la posicion en donde insertar (empezando desde 1): ", 1, p_tamanio(pila) + 1);
+            clave = pedirEntero("Ingrese la nueva clave: ", -1000, 1000);
             TipoElemento x = te_crear(clave);
             NuevaPila = p_ej2_colocarelemento(auxiliar, posicion, x);
             printf("\nNueva Pila:\n");
@@ -324,7 +324,7 @@ void ejercicio2()
             printf("\nEjercicio C: Eliminar de una pila un elemento dado (primera ocurrencia encontrada por la clave):\n");
             printf("\nPila Oroginal:\n");
             p_mostrar(auxiliar);
-            clave = leer_entero("Ingrese la clave a eliminar: ", -1000, 1000);
+            clave = pedirEntero("Ingrese la clave a eliminar: ", -1000, 1000);
             NuevaPila = p_ej2_eliminarclave(auxiliar, clave);
             printf("\nNueva Pila:\n");
             p_mostrar(NuevaPila);
@@ -339,8 +339,8 @@ void ejercicio2()
                 printf("La pila esta vacia NO se puede realizar un intercambio\n");
                 break;
             }
-            int posicion1 = leer_entero("Ingrese la primera posicion a intercambiar(empezando desde 1): ", 1, p_tamanio(pila));
-            int posicion2 = leer_entero("Ingrese la segunda posicion a intercambiar(empezando desde 1): ", 1, p_tamanio(pila));
+            int posicion1 = pedirEntero("Ingrese la primera posicion a intercambiar(empezando desde 1): ", 1, p_tamanio(pila));
+            int posicion2 = pedirEntero("Ingrese la segunda posicion a intercambiar(empezando desde 1): ", 1, p_tamanio(pila));
             NuevaPila = p_ej2_intercambiarposiciones(auxiliar, posicion1, posicion2);
             p_mostrar(NuevaPila);
             break;

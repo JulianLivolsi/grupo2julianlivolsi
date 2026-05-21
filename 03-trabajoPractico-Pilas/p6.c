@@ -57,8 +57,8 @@ int ejercicio6()
     Pila pila = rellenarPila(-1);
     printf("--> ");
     p_mostrar(pila);
-    int elemEliminar = leer_entero("Ingrese el elemento a eliminar: ", -100, 100);
-    int tipo = leer_entero("\nIterativa (0) | Recursiva (1): ", 0, 1);
+    int elemEliminar = pedirEntero("Ingrese el elemento a eliminar: ", -100, 100);
+    int tipo = pedirEntero("\nIterativa (0) | Recursiva (1): ", 0, 1);
     
     Pila resultado;
     if (tipo == 0)
@@ -101,7 +101,7 @@ int ejercicio6()
         );
     }
     
-    int eleccion = leer_entero("\nSalir (0) | Continuar (1): ", 0, 1);
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
     if (eleccion == 1)
         ejercicio6();
     else if (eleccion == 0)

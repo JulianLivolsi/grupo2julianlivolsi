@@ -57,7 +57,7 @@ int ejercicio7()
         " Y es de complejidad cuadrática porque el número total de comparaciones crece proporcionalmente al producto de los tamaños de ambas pilas.\n" 
     );
 
-    int eleccion = leer_entero("\nSalir (0) | Continuar (1): ", 0, 1);
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
     if (eleccion == 1)
         ejercicio7();
     else if (eleccion == 0)

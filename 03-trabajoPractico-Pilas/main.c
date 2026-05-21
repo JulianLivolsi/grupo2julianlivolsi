@@ -11,11 +11,11 @@ int main()
     {
         limpiarConsola();
         printf("\n------ Menu TP3: Pilas ------\n");
-        eleccion = leer_entero("Seleccione el ejercicio a ejecutar [2-8] | [0] para salir: ", 0, 8);
+        eleccion = pedirEntero("Seleccione el ejercicio a ejecutar [2-8] | [0] para salir: ", 0, 8);
         while (eleccion == 1)
         {
             printf("Entrada inválida. Ingrese otro entero\n");
-            eleccion = leer_entero("Seleccione el ejercicio a ejecutar [2-8] | [0] para salir): ", 0, 8);
+            eleccion = pedirEntero("Seleccione el ejercicio a ejecutar [2-8] | [0] para salir): ", 0, 8);
         }
         if (eleccion == 0)
         {

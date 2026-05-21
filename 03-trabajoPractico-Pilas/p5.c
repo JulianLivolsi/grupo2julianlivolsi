@@ -50,7 +50,7 @@ int ejercicio5()
         "Sin embargo, en notación Big O los factores constantes como el 2 se descartan,por lo que la complejidad sigue siendo O(n).\n"
     );
 
-    int eleccion = leer_entero("\nSalir (0) | Continuar (1): ", 0, 1);
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
     if (eleccion == 1)
         ejercicio5();
     else if (eleccion == 0)

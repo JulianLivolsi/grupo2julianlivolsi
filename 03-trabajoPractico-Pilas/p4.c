@@ -60,8 +60,8 @@ int ejercicio4()
     limpiarConsola();
     srand(time(NULL));
     printf("\n------ Ejercicio 4 ------\n");
-    int numero = leer_entero("ingrese el numero a transformar[0-1023]: ", 0, 1023);
-    int base = leer_entero("ingrese la base a la que desea transformar el numero (2-16): ", 0, 100);
+    int numero = pedirEntero("ingrese el numero a transformar[0-1023]: ", 0, 1023);
+    int base = pedirEntero("ingrese la base a la que desea transformar el numero (2-16): ", 0, 100);
     char *res = p_ej4_cambiarbase(numero, base);
     if (base < 2 || base > 16)
         printf("La base no es valida, se devolvio el mismo numero: %d\n", numero);
@@ -78,7 +78,7 @@ int ejercicio4()
         "\nEn conclusion, la complejidad algorítmica total es O(log n), es decir, tiene una complejidad logarítmica, siendo n el valor inicial del numero decimal que se convierte."
     );
 
-    int eleccion = leer_entero("\nSalir (0) | Continuar (1): ", 0, 1);
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
     if (eleccion == 1)
         ejercicio4();
     else if (eleccion == 0)

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "tp_3_pilas.h"
+#include "tp_pilas.h"
 #include "utilidades.h"
 
 /*
@@ -109,7 +109,7 @@ void ejercicio8(){
     );
     
     
-    int eleccion = leer_entero("\nSalir (0) | Continuar (1): ", 0, 1);
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
     if (eleccion == 1)
         ejercicio8();
     else if (eleccion == 0)
