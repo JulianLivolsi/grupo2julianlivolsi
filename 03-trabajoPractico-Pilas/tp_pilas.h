@@ -2,9 +2,10 @@
 #define TP_PILAS_H
 
 #include <stdbool.h>
-#include "../libs/tipoElemento/headers/tipo_elemento.h"
 #include "../libs/validaciones/headers/AUXILIARES.h"
+#include "../libs/tipoElemento/headers/tipo_elemento.h"
 #include "../libs/pilas/headers/pilas.h"
+#include "../libs/listas/headers/listas.h"
 
 
 /**

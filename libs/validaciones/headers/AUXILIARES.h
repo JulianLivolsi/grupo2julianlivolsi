@@ -1,6 +1,8 @@
-#include "../../listas/headers/listas.h"
 #ifndef AUXILIARES_H
 #define AUXILIARES_H
+
+#include "../../listas/headers/listas.h"
+#include "../../pilas/headers/pilas.h"
 // Macros para el menu
 // #define MENU_MIN 0
 // #define MENU_MAX 10
