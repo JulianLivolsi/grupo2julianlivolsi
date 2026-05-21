@@ -46,10 +46,10 @@ int ejercicio3()
     printf("\n--> Las pilas son %s\n", p_ej3_iguales(p1, p2) ? "IGUALES" : "DIFERENTES");
     printf(
         "\nLa complejidad algoritmica de esta funcion es de 0(n). Es decir, complejidad lineal."
-        "Esto es asi ya que los dos bucles 'for' recorren una sola vez, de manera secuencial, las 2 pilas. Ya sea para desarmarlas y comparar elementos o para restaurarlas."
-        "Pero al no haber una utilizacion de ciclos anidados ni operaciones costosas por elemento, el número total de operaciones crece linealmente con respecto a la cantidad de elementos de las pilas."
+        "Esto es asi ya que los dos bucles 'for' recorren una sola vez, de manera secuencial, las 2 pilas."
+        "Al no haber ciclos anidados ni operaciones costosas por elemento, el número total de operaciones crece linealmente con respecto a la cantidad de elementos de las pilas."
         "En resumen, si las pilas tienen 'n' elementos, se realizan aproximadamente '2n' iteraciones (una pasada para comparar y otra para restaurar)."
-        "Sin embargo, en notación Big O los factores constantes como el 2 se descartan,por lo que la complejidad sigue siendo O(n).\n"
+        "Descartando el factor constante '2' se obtiene la complejidad O(n).\n"
     );
 
     int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
