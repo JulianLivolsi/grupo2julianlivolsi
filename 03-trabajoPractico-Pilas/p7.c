@@ -43,8 +43,8 @@ int ejercicio7()
         "\nLa complejidad algoritmica de esta funcion es de O(n * m). Es decir, complejidad cuadratica." 
         " Esto es asi ya que la funcion tiene dos bucles 'while' anidados: uno para la pila 1 y otro para la pila 2." 
         " El O(n * m) se debe a que por cada elemento de pila 1 (que tiene n elementos), se comparan con todos los elementos de pila 2 (que tiene m elementos)." 
-        "Asi, para cada elemento en pila 1, realizas m comparaciones, lo que da como resultado una complejidad de n * m operaciones en el peor de los casos." 
-        " Y es de complejidad cuadrática porque el número total de comparaciones crece proporcionalmente al producto de los tamaños de ambas pilas.\n" 
+        "Asi, para cada elemento en pila 1, realizas m comparaciones, lo que da como resultado una complejidad de n * m operaciones." 
+        " Y es de complejidad cuadrática ya que en el peor de los casos ,cuando ambas pilas son del mismo tamaño, se tiene O(n * n) es decir O(n^2).\n" 
     );
 
     int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
