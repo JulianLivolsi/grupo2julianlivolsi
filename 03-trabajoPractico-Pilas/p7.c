@@ -2,16 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "tp_pilas.h"
-#include "utilidades.h"
-
-/*
-7.	Dada dos pilas realizar una función que permita determinar los elementos que tienen en común.
-    Debe retornar una nueva pila con esos elementos (que están en ambas pilas) sin perder las
-    pilas originales. Determinar la complejidad algorítmica de la solución.
-    ----
-    retornar la nueva pila con las claves en comun de ambas Pilas recibidas por parametro.
-    Si no hay claves en comun retornar una pila vacia.
-*/
 
 Pila p_ej7_elementoscomunes(Pila p1, Pila p2)
 {

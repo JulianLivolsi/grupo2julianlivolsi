@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "tp_pilas.h"
-#include "utilidades.h"
 
 Pila p_ej8_sacarrepetidos(Pila p){
     if (p_es_vacia(p)){

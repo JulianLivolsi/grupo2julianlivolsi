@@ -2,13 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "tp_pilas.h"
-#include "utilidades.h"
-/*
- 3.	Dadas dos pilas, determinar si sus contenidos son exactamente iguales (solo por la clave), sin destruirlas.
-	Utilizar para la resolución del problema una única pila auxiliar.
-	Determinar la complejidad algorítmica de la solución.
-    retorna true si son exactamente iguales, caso contrario retorna false
-*/
 
 bool p_ej3_iguales(Pila p1, Pila p2){
     bool resultado = true;

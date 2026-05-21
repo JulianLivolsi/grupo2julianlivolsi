@@ -2,19 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "tp_pilas.h"
-#include "utilidades.h"
-// -- IMPORTANTE --> agrgar caluclo de la comlejidad e implementacion recursiva
-/*
-6.	Dada una pila con valores al azar eliminar todas las ocurrencias de un determinado ítem
-    sin perder la pila original.
-    Deberá retornar una nueva pila sin el ítem en consideración.
-    Resolver iterativamente y recursivamente.
-    Determinar la complejidad algorítmica de ambas soluciones.
-    -----
-    retornar la nueva pila sin la clave que se debe sacar (eliminar).
-    Si la clave no esta se retorna la pila recibida.
-    La definicion vale para ambas resoluciones
-*/
+
 Pila p_ej6_eliminarclave(Pila p, int clave)
 {
     Pila aux = p_crear();

@@ -2,13 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "tp_pilas.h"
-#include "utilidades.h"
-// -- IMPORTANTE --> Determinar la complejidad algorítmica
-/*
-5.  Invertir el contenido de una pila sin destruir la pila original.
-    Se debe retornar la nueva pila invertida y la original no se debe perder.
-    Determinar la complejidad algorítmica de la solución.
-*/
+
 Pila p_ej5_invertir(Pila p)
 {
     Pila invertida = p_crear();

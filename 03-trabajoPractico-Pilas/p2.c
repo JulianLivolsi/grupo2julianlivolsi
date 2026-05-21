@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "tp_pilas.h"
-#include "utilidades.h"
 
 bool p_ej2_existeclave(Pila p, int clave)
 {
