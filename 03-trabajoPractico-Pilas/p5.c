@@ -38,10 +38,10 @@ int ejercicio5()
     p_mostrar(pila);
     printf(
         "\nLa complejidad algoritmica de esta funcion es de 0(n). Es decir, complejidad lineal."
-        "Esto es asi ya que los dos bucles 'while' recorren una sola vez, de manera secuencial, las 2 pilas. Ya sea para crear la pila invertida o para restaurar la pila original." 
-        "Pero al no haber una utilizacion de ciclos anidados ni operaciones costosas por elemento, el número total de operaciones crece linealmente con respecto a la cantidad de elementos de las pilas."
-        "En resumen, si las pilas tienen 'n' elementos, se realizan aproximadamente '2n' iteraciones (una pasada para crear la pila invertida y otra para restaurar la original)." 
-        "Sin embargo, en notación Big O los factores constantes como el 2 se descartan,por lo que la complejidad sigue siendo O(n).\n"
+        "Esto es asi ya que los dos bucles 'while' recorren una sola vez, de manera secuencial, las 2 pilas. " 
+        "Como no hay ciclos anidados ni operaciones costosas, el número total de operaciones crece linealmente con respecto a la cantidad de elementos de las pilas."
+        "Asi, si las pilas tienen 'n' elementos, se realizan aproximadamente '2n' iteraciones " 
+        "Descartando el factor constante '2' se obtiene que la complejidad es O(n).\n"
     );
 
     int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
