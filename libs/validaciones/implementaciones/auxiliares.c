@@ -188,9 +188,12 @@ Pila rellenarPila(int elementos)
     int aleatorio = pedirEntero("Queire llenar la pila aleatoriamente? -> No(0) | Si(1): ", 0, 1);
     if (aleatorio == 1)
     {
+        int r_min = pedirEntero("valor minimo de los elementos: ", -1000, 1000);
+        int r_max = pedirEntero("valor maximo de los elementos: ", -1000, 1000);
         for (int j = 0; j < elementos; j++)
         {
-            TipoElemento random = te_crear(rand() % 100);
+            //TipoElemento random = te_crear(rand() % 100);
+            TipoElemento random = te_crear(rand() % (r_max - r_min + 1) + r_min);
             p_apilar(resultado, random);
         }
     }
