@@ -59,14 +59,11 @@ int ejercicio6()
         p_mostrar(pila);
         printf(
             "\nLa complejidad algorítmica de esta funcion es de O(n). Es decir, complejidad lineal.\n"
-            "Esto es asi ya que los dos bucles 'while' recorren una sola vez, de manera secuencial, las 2 pilas, "
-            "ya sea para armar una pila auxiliar con los elementos de la pila original o para restaurar la pila original "
-            "y armar una pila con los elementos de la pila original sin el elemento 'clave'.\n"
+            "Esto es asi ya que los dos bucles 'while' recorren una sola vez, de manera secuencial, las 2 pilas. "
             "Pero al no haber una utilizacion de ciclos anidados ni operaciones costosas por elemento, el numero total de operaciones "
             "crece linealmente con respecto a la cantidad de elementos de las pilas.\n"
-            "En resumen, si las pilas tienen 'n' elementos, se realizan aproximadamente '2n' iteraciones (una pasada para armar el auxiliar "
-            "y otra para restaurar la pila original y armar el duplicado sin la 'clave').\n"
-            "Sin embargo, en notacion Big O los factores constantes como el 2 se descartan, "
+            "En resumen, si las pilas tienen 'n' elementos, se realizan aproximadamente '2n' iteraciones "
+            "Sin embargo, los factores constantes como el 2 se descartan, "
             "por lo que la complejidad sigue siendo O(n).\n"
         );
         
