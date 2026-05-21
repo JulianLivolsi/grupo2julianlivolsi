@@ -75,7 +75,7 @@ int p_longitud(Pila pila) {
 
 
 bool p_es_llena(Pila pila) {
-    return (p_longitud(pila) == TAMANIO_MAXIMO);
+    return (p_longitud(pila) == TAMANIO_MAXIMO_PILA);
 }
 
 

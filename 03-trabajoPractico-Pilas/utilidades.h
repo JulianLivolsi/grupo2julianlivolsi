@@ -2,7 +2,6 @@
 #define Utilidades
 #include "tp_pilas.h"
 
-void limpiarConsola();
 Pila rellenarPila(int elementos);
 void p_intercambiar(Pila P, Pila Paux);
 Pila pilaClon(Pila p);

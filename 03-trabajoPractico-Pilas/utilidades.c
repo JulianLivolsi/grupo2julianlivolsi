@@ -4,15 +4,6 @@
 #include <time.h>
 #include "utilidades.h"
 
-void limpiarConsola()
-{
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
-
 Pila rellenarPila(int elementos)
 {   // si elementos es pasado con el como -1 pregunta el largo al usuario
     if (elementos == -1)

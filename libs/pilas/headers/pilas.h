@@ -2,9 +2,9 @@
 #define PILAS_H
 
 #include <stdbool.h>
-#include "../tipoElemento/headers/tipo_elemento.h"
+#include "../../tipoElemento/headers/tipo_elemento.h"
 
-static const int TAMANIO_MAXIMO = 10;
+static const int TAMANIO_MAXIMO_PILA = 10;
 
 struct PilaRep;
 typedef struct PilaRep *Pila;

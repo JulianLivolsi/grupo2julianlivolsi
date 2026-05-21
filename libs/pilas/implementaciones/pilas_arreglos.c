@@ -11,7 +11,7 @@ struct PilaRep {
 
 Pila p_crear() {
     Pila nueva_pila = (Pila) malloc(sizeof(struct PilaRep));
-    nueva_pila->valores = calloc((TAMANIO_MAXIMO+1), sizeof(TipoElemento));
+    nueva_pila->valores = calloc((TAMANIO_MAXIMO_PILA+1), sizeof(TipoElemento));
     nueva_pila->tope = 0;
     return nueva_pila;
 }
@@ -51,7 +51,7 @@ bool p_es_vacia(Pila pila) {
 
 
 bool p_es_llena(Pila pila) {
-    return (pila->tope == TAMANIO_MAXIMO);
+    return (pila->tope == TAMANIO_MAXIMO_PILA);
 }
 
 

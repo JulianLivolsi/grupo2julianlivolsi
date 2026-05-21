@@ -4,15 +4,6 @@
 #include "tp_pilas.h"
 #include "utilidades.h"
 
-/*
-8.	Dada una pila con valores repetidos, se desea obtener una nueva pila con todos los 
-    valores (sin repetición) y la cantidad de veces que aparecen. No debe perderse la pila original.  
-    El proceso recibe la pila con las repeticiones  y retorna una nueva pila.
-    Determinar la complejidad algorítmica de la solución.
-    retornar la nueva pila con las claves unicas (no deben existir repetidas) y por cada una la cantidad 
-    de veces que aparecia en la Pila recibida por parametro Si la pila estavacia retorna pila vacia.
-*/
-
 Pila p_ej8_sacarrepetidos(Pila p){
     if (p_es_vacia(p)){
         printf("PILA VACIA !!! \n");
