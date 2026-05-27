@@ -5,14 +5,20 @@
 
 Pila p_ej7_elementoscomunes(Pila p1, Pila p2)
 {
+    if (p_es_vacia(p1) || p_es_vacia(p2)) return p_crear();
+    
     Pila aux3 = p_crear();
     Pila aux1 = p_crear();
     Pila aux2 = p_crear();
-    while (!p_es_vacia(p1)){
+
+    while (!p_es_vacia(p1))
+    {
         TipoElemento  element1 = p_desapilar(p1);
-        while (!p_es_vacia(p2)){
+        while (!p_es_vacia(p2))
+        {
             TipoElemento  element2 = p_desapilar(p2);
-            if (element1->clave == element2->clave) {
+            if (element1->clave == element2->clave)
+            {
                 p_apilar(aux3,element1);
             }
             p_apilar(aux2,element2);
@@ -20,9 +26,12 @@ Pila p_ej7_elementoscomunes(Pila p1, Pila p2)
         p_apilar(aux1,element1);
         p_intercambiar(p2, aux2);
     }
+
     p_intercambiar(p1, aux1);
     p_intercambiar(p2, aux2);
+
     Pila resultado =  p_ej5_invertir(aux3);
+    free(aux1); free(aux2);
     return resultado;
 }
 

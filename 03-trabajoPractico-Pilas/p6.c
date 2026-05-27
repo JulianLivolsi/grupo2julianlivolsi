@@ -7,6 +7,7 @@ Pila p_ej6_eliminarclave(Pila p, int clave)
 {
     Pila aux = p_crear();
     Pila resultado = p_crear();
+
     while (!p_es_vacia(p))
     {
         TipoElemento elem = p_desapilar(p);
@@ -16,23 +17,31 @@ Pila p_ej6_eliminarclave(Pila p, int clave)
     {
         TipoElemento elem = p_desapilar(aux);
         p_apilar(p, elem);
+
         if (elem->clave != clave)
         {
-            p_apilar(resultado, elem);
+            TipoElemento elem_r = te_crear_con_valor(elem->clave, elem->valor);
+            p_apilar(resultado, elem_r);
         }
     }
+    free(aux);
     return resultado;
 }
 
 // Para el caso recursivo del ejercicio 6
 Pila p_ej6_eliminarclave_r(Pila p, int clave)
 {
-    if (p_es_vacia(p))
-        return p_crear();
+    if (p_es_vacia(p)) return p_crear();
+
     TipoElemento elem = p_desapilar(p);
     Pila resultado = p_ej6_eliminarclave_r(p, clave);
+
     if (elem->clave != clave)
-        p_apilar(resultado, elem);
+    {
+        TipoElemento elem_r = te_crear_con_valor(elem->clave, elem->valor);
+        p_apilar(resultado, elem_r);
+    }
+
     p_apilar(p, elem);
     return resultado;
 }

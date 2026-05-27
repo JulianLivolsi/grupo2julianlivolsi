@@ -5,21 +5,24 @@
 
 Pila p_ej5_invertir(Pila p)
 {
+    if (p_es_vacia(p)) return p_crear();
+
     Pila invertida = p_crear();
     Pila aux = p_crear();
-    TipoElemento X = te_crear(0);
+
     while (!(p_es_vacia(p)))
     {
-        X = p_desapilar(p);
+        TipoElemento X = p_desapilar(p);
         p_apilar(aux, X);
         p_apilar(invertida, X);
     }
     while (!(p_es_vacia(aux)))
     {
-        X = p_desapilar(aux);
+        TipoElemento X = p_desapilar(aux);
         p_apilar(p, X);
     }
 
+    free(aux);
     return invertida;
 }
 

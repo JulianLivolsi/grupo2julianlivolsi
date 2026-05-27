@@ -11,23 +11,24 @@ bool p_ej2_existeclave(Pila p, int clave)
         return false;
     }
     Pila Paux = p_crear();
-    TipoElemento X = te_crear(0);
     bool result = false;
 
     // Recorro la pila desapilandola y pasandola al auxiliar
     while (p_es_vacia(p) != true)
     {
-        X = p_desapilar(p);
+        TipoElemento X = p_desapilar(p);
         p_apilar(Paux, X);
 
         if (X->clave == clave)
         {
             result = true;
+            break;
         }
     }
     // Recorro la pila auxiliar para pasarla a la original
     p_intercambiar(p, Paux);
 
+    free(Paux);
     return result;
 }
 
@@ -62,6 +63,7 @@ Pila p_ej2_colocarelemento(Pila p, int posicionordinal, TipoElemento x)
     if (posicionordinal > cantidadElementos + 1 || posicionordinal < 1)
     {
         printf("Posicion fuera de rango\n");
+        free(NuevaPila); free(Paux); free(duplicadoOriginal);
         return p;
     }
 
@@ -70,21 +72,29 @@ Pila p_ej2_colocarelemento(Pila p, int posicionordinal, TipoElemento x)
     {
         TipoElemento element = p_desapilar(p);
         p_apilar(duplicadoOriginal, element); // Guarda copia para restaurar la pila original
+
+        // Instanciación aislada para la nueva estructura
+        TipoElemento element_copia = te_crear_con_valor(element->clave, element->valor);
         if (posicion == posicionordinal)
         {
             p_apilar(Paux, x);       // Inserta el nuevo elemento primero
-            p_apilar(Paux, element); // Luego el que ya estaba en esa posición
+            p_apilar(Paux, element_copia); // Luego el clon aislado
         }
         else
         {
-            p_apilar(Paux, element); // En las demás posiciones, solo apila lo que estaba
+            p_apilar(Paux, element_copia); // En las demás posiciones, solo apila el clon
         }
         posicion++;
+    }
+    if (posicionordinal == posicion)
+    {
+        p_apilar(Paux, x);
     }
 
     p_intercambiar(p, duplicadoOriginal);
     p_intercambiar(NuevaPila, Paux);
 
+    free(Paux); free(duplicadoOriginal);
     return NuevaPila;
 }
 
@@ -100,31 +110,36 @@ Pila p_ej2_eliminarclave(Pila p, int clave)
     Pila duplicadoOriginal = p_crear();
     bool ElementoUbicado = false;
 
+    // Recorremos la pila resguardando la original y filtrando
     while (p_es_vacia(p) != true)
     {
         TipoElemento element = p_desapilar(p);
-        p_apilar(duplicadoOriginal, element);
+        p_apilar(duplicadoOriginal, element); // Resguardo del original
+
         if (element->clave == clave && !ElementoUbicado)
         {
             ElementoUbicado = true;
+            // Omitimos la clonacion e insercion en Paux de este elemento
         }
         else
         {
-            p_apilar(Paux, element);
+            // Copia profunda
+            TipoElemento copia_element = te_crear_con_valor(element->clave, element->valor);
+            p_apilar(Paux, copia_element);
         }
     }
+
     p_intercambiar(p, duplicadoOriginal);
     p_intercambiar(NuevaPila, Paux);
+
+    free(Paux); free(duplicadoOriginal);
 
     if (!ElementoUbicado)
     {
         printf("\nNo se encontró la clave %d en la pila.\n", clave);
         return p;
     }
-    else
-    {
-        return NuevaPila;
-    }
+    return NuevaPila;
 }
 
 Pila p_ej2_intercambiarposiciones(Pila p, int pos1, int pos2)
@@ -212,7 +227,7 @@ Pila p_ej2_duplicar(Pila p)
 
     int tamanio = p_tamanio(p);
 
-    if (tamanio * 2 > 10)
+    if (tamanio * 2 > TAMANIO_MAXIMO_PILA)
     {
         printf("LA PILA NO SE PUEDE DUPLICAR PORQUE EXCEDE EL TAMANIO PERMITIDO EN EL TAD(10).\n");
         return p;
@@ -223,28 +238,37 @@ Pila p_ej2_duplicar(Pila p)
     Pila duplicado = p_crear();
     Pila duplicadoFinal = p_crear();
 
+    // Invertimos la pila original para poder leerla de abajo hacia arriba
     while (p_es_vacia(p) != true)
     {
         TipoElemento element = p_desapilar(p);
         p_apilar(Paux, element);
     }
 
+    // Restauramos la original y armamos dos bloques identicos
     while (p_es_vacia(Paux) != true)
     {
         TipoElemento element = p_desapilar(Paux);
-        TipoElemento copia1 = te_crear(element->clave);
-        TipoElemento copia2 = te_crear(element->clave);
-        p_apilar(p, element);
-        p_apilar(NuevaPila, copia1);
-        p_apilar(duplicado, copia2);
+
+        TipoElemento copia1 = te_crear_con_valor(element->clave, element->valor);
+        TipoElemento copia2 = te_crear_con_valor(element->clave, element->valor);
+
+        p_apilar(p, element); // La original queda intacta
+        p_apilar(NuevaPila, copia1); // Bloque de abajo
+        p_apilar(duplicado, copia2); // Bloque de arriba
     }
 
+    // Invertimos "duplicado" volcandolo en "duplicadoFinal", para luiego colocarlo encima de "NuevaPila"
     p_intercambiar(duplicadoFinal, duplicado);
+
+    // Volcamos el bloque ya invertido sobre la NuevaPila
     while (p_es_vacia(duplicadoFinal) != true)
     {
         p_apilar(NuevaPila, p_desapilar(duplicadoFinal));
     }
 
+    // Liberamos las pilas auxiliares
+    free(Paux); free(duplicado); free(duplicadoFinal);
     return NuevaPila;
 }
 
@@ -266,6 +290,7 @@ int p_ej2_cantidadelementos(Pila p)
     }
     p_intercambiar(p, Paux);
 
+    free(Paux);
     return cantidadElementos;
 }
 

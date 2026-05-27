@@ -4,13 +4,16 @@
 #include "tp_pilas.h"
 
 bool p_ej3_iguales(Pila p1, Pila p2){
+
     bool resultado = true;
     Pila aux = p_crear();
     TipoElemento elem1, elem2;
+
     int tamanio1 = p_tamanio(p1);
     int tamanio2 = p_tamanio(p2);
-    if (tamanio1 != tamanio2)
-        return false;
+
+    if (tamanio1 != tamanio2) return false;
+
     for (int i = 0; i < tamanio1; i++){
         elem1 = p_desapilar(p1);
         elem2 = p_desapilar(p2);
@@ -20,6 +23,7 @@ bool p_ej3_iguales(Pila p1, Pila p2){
         p_apilar(aux, elem1);
         p_apilar(aux, elem2);
     }
+
     for ( int i = 0; i < tamanio1; i++)
     {
         elem2 = p_desapilar(aux);
@@ -28,6 +32,7 @@ bool p_ej3_iguales(Pila p1, Pila p2){
         p_apilar(p2, elem2);
     }
     
+    free(aux);
     return resultado;
 }
 

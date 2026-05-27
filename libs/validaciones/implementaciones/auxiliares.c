@@ -243,10 +243,9 @@ void p_intercambiar(Pila P, Pila Paux)
         return;
     }
 
-    TipoElemento X = te_crear(0);
     while (p_es_vacia(Paux) != true)
     {
-        X = p_desapilar(Paux);
+        TipoElemento X = p_desapilar(Paux);
         p_apilar(P, X);
     }
 }
@@ -255,13 +254,15 @@ int p_tamanio(Pila P)
 {
     int tamanio = 0;
     Pila aux = p_crear();
-    TipoElemento X = te_crear(0);
+
     while (!(p_es_vacia(P)))
     {
-        X = p_desapilar(P);
+        TipoElemento X = p_desapilar(P);
         p_apilar(aux, X);
         tamanio++;
     }
     p_intercambiar(P, aux);
+    
+    free(aux);
     return tamanio;
 }

@@ -8,6 +8,7 @@ char *p_ej4_cambiarbase(int nrobasedecimal, int nrootrabase)
 {
     char *resultado = (char *)malloc(50 * sizeof(char));
     resultado[0] = '\0';
+
     if (nrootrabase < 2 || nrootrabase > 16)
     {
         sprintf(resultado, "%d", nrobasedecimal);
@@ -28,22 +29,24 @@ char *p_ej4_cambiarbase(int nrobasedecimal, int nrootrabase)
     digito = te_crear(nrobasedecimal);
     p_apilar(numeroCambiado, digito);
 
-    char temp[2];
+    int i = 0;
     while (!p_es_vacia(numeroCambiado))
     {
         TipoElemento valor = p_desapilar(numeroCambiado);
         if (valor->clave >= 10)
         {
-            temp[0] = 'A' + (valor->clave - 10);
+            resultado[i] = 'A' + (valor->clave - 10);
         }
         else
         {
-            temp[0] = '0' + valor->clave;
+            resultado[i] = '0' + valor->clave;
         }
-        temp[1] = '\0';
-        strcat(resultado, temp);
+        i++;
+        free(valor);
     }
-
+    resultado[i] = '\0';
+    
+    free(numeroCambiado);
     return resultado;
 }
 
