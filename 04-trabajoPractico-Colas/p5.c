@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "tp_colas.h"
+
+int contadorDivisionesExactas(Cola c, int clave) // Funcion auxiliar que cuenta la cantidad de divisiones exactas de una clave en una cola
+{
+    if (clave == 0) return 0;
+
+    Cola aux = c_crear(); // Creo una cola auxiliar | O(1)
+    int contador = 0; // Inicializo un contador en 0 | O(1)
+
+    while(!c_es_vacia(c)) // Mientras la cola no sea vacia la desencolo | O(N)
+    {
+        TipoElemento te = c_desencolar(c); // | O(1)
+        c_encolar(aux, te); // Encolo el elemento de la cola original en aux | O(1)
+
+        if (te->clave % clave == 0) // Si la division es exacta | O(1)
+        {
+            contador++; // Sumo 1 al contador | O(1)
+        }
+    }
+    c_intercambiar(c, aux); // Recupero la cola original | O(N)
+
+    free(aux); // Libero la memoria de la cola auxiliar | O(1)
+    return contador; // Devuelvo el contador | O(1)
+
+    // Complejidad algoritmica O(N)
+}
+
+Cola c_ej5_divisortotal(Cola c)
+{
+    if (c_es_vacia(c)) return c_crear(); // Si la cola es vacia retorno una cola vacia | O(1)
+
+    Cola aux = c_crear(), res = c_crear(); // Creo colas auxiliar y resultado | O(1)
+    Cola copiaInmutable = c_ej2_copiar(c); // Creo una copia de la cola original para realizar el llamado a la funcion auxiliar | O(1)
+
+    int N = c_contarElementos(c); // Declaro un entero N que representa la cantidad de elementos de la cola | O(N)
+
+    while(!c_es_vacia(c)) // Mientras la cola no sea vacia la desencolo | O(N)
+    {
+        TipoElemento te = c_desencolar(c); // | O(1)
+        c_encolar(aux, te); // Encolo el elemento desencolado en aux | O(1)
+
+        if (te->clave == 0) continue;
+
+        // Declaro un entero que representa la cantidad de divisiones exactas, calculandolo con la funcion auxiliar
+        int cantidadDivisiones = contadorDivisionesExactas(copiaInmutable, te->clave); // | O(N)
+
+        if (cantidadDivisiones == N) // Si la cantidad de divisiones exactas es igual a la cantidad de elementos de la cola, tenemos un divisor total | O(1)
+        {
+            TipoElemento te_res = te_crear_con_valor(te->clave, (void*)1); // Creo un tipo elemento con la clave evaluada y como valor un true (entero casteado a puntero) | O(1)
+            c_encolar(res, te_res); // Encolo el TipoElemento creado en la cola resultado | O(1)
+        }
+        else if (cantidadDivisiones >= (N/2.0)) // Si la cantidad de divisiones exactas es mayor o igual a la mitad de N, tenemos un divisor parcial | O(1)
+        {
+            TipoElemento te_res = te_crear_con_valor(te->clave, (void*)0); // Creo un tipo elemento igual que antes, pero con un false (entero casteado a puntero) | O(1)
+            c_encolar(res, te_res); // Encolo el TipoElemento creado en la cola resultado | O(1)
+        }
+    }
+    c_intercambiar(c, aux); // Recupero la cola original | O(1)
+
+    while(!c_es_vacia(copiaInmutable)) free(c_desencolar(copiaInmutable)); // Libero los nodos de la copiaInmutable | O(N)
+    free(copiaInmutable); // Libero la colaInmutable | O(1)
+    free(aux); // Libero la cola auxiliar | O(1)
+
+    if (c_es_vacia(res)) // Si resultados es vacia, quiere decir que no existen divisores totales ni parciales | O(1)
+    {
+        free(res); // Libero res (que no contiene ningun nodo) | O(1)
+        return c_crear(); // Retorno una cola vacia | O(1)
+    }
+
+    return res; // Si se llega a esta linea es porque existe al menos un divisor total o parcial, por lo que retorno la cola resultado | O(1)
+
+    // Complejidad algoritmica O(N^2)
+}

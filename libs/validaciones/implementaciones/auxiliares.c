@@ -9,9 +9,10 @@
 #include "../../listas/headers/listas.h"
 #include "../../pilas/headers/pilas.h"
 #include "../../tipoElemento/headers/tipo_elemento.h"
+#include "../../colas/headers/colas.h"
 
 
-//-------------- Validaciones de entreda ---------------------------------------//
+//------------------------------------ Validaciones de entreda ------------------------------------//
 int pedirEntero(char mensaje[], int min, int max)
 {
     int valor, exito, esValido;
@@ -105,7 +106,7 @@ void pedirCadena(char mensaje[], char buffer[], int max_len)
 }
 
 
-//-------------- Generales -----------------------------------------------------//
+//------------------------------------ Generales ------------------------------------//
 int mostrarMenu(const char *titulo, const char *opciones[], int cantidadOpciones)
 {
     //system("cls"); "cls solo sirve para winsows"
@@ -140,7 +141,7 @@ void limpiarConsola()
 #endif
 }
 
-//-------------- Listas --------------------------------------------------------//
+//------------------------------------ Listas ------------------------------------//
 Lista rellenarLista(int elementos)
 {
     // llena una lista. el parametro elementos representa el largo de la lista
@@ -173,7 +174,7 @@ Lista rellenarLista(int elementos)
     return resultado;
 }
 
-//-------------- Pilas ---------------------------------------------------------//
+//------------------------------------ Pilas ------------------------------------//
 Pila rellenarPila(int elementos)
 {   // si elementos es pasado con el como -1 pregunta el largo al usuario
     if (elementos == -1)
@@ -265,4 +266,35 @@ int p_tamanio(Pila P)
     
     free(aux);
     return tamanio;
+}
+
+//------------------------------------ Colas ------------------------------------//
+
+void c_intercambiar(Cola c, Cola aux) // Intercambia los elementos de aux a c
+{
+    while(!c_es_vacia(aux)) // | O(N)
+    {
+        c_encolar(c, c_desencolar(aux)); // | O(1)
+    }
+    // Se determina la complejidad algoritmica ya que se llama a la funcion en ejercicios posteriores donde se debe determinar la complejidad
+    // Complejidad algoritmica | O(N)
+}
+
+int c_contarElementos(Cola c)
+{
+    if (c_es_vacia(c)) return 0; // Si la cola es vacia no contiene elementos por lo que retorno 0
+
+    Cola aux = c_crear(); // Creo una cola auxiliar
+    int resultado = 0; // Inicializo un contador en 0
+
+    while(!c_es_vacia(c)) // Mientras c no sea vacia la desencolo
+    {
+        TipoElemento te = c_desencolar(c);
+        c_encolar(aux, te); // Encolo el elemento de c en aux
+        resultado++; // Sumo 1 al resultado
+    }
+    c_intercambiar(c, aux); // Recupero la cola original
+
+    free(aux); // Libero la memoria de la cola auxiliar
+    return resultado; // Retorno el contador
 }
