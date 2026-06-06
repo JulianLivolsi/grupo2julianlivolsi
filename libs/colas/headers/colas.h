@@ -23,4 +23,6 @@ void c_mostrar(Cola cola);
 
 TipoElemento c_recuperar(Cola cola);
 
+void c_intercambiar(Cola c, Cola aux);
+
 #endif // COLAS_H
