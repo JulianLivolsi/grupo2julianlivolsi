@@ -59,3 +59,7 @@ Lista c_ej6_comunesapilaycola(Pila p, Cola c)
 
     return resultado;
 }
+
+//COMPLEJIDAD
+/*Siendo N la cantidad de elementos de la pila y M la cantidad de elementos de la cola, por cada elemento N se recorren todos los elementos M;
+de modo que la complejidad seria O(N*M). En el peor caso, donde N=M, tenemos que la complejidad del algoritmos es O(N2)*/
