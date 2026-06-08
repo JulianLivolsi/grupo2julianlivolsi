@@ -57,6 +57,25 @@ Cola c_ej4_colanorepetidos(Cola c)
     return res; // Si llego a esta linea es porque existe algun elemento no repetido en la original, por lo que retorno la cola resultado
 }
 
+int ejercicio4()
+{
+    limpiarConsola();
+    srand(time(NULL));
+    printf("\n------ Ejercicio 4 ------\n");
+    Cola c = rellenarCola(-1);
+    printf("\nCola : \n");
+    c_mostrar(c);
+    Cola res = c_ej4_colanorepetidos(c);
+    printf("\nElementos no repetidos : \n");
+    c_mostrar(res);
+
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
+    if (eleccion == 1)
+        ejercicio4();
+    else if (eleccion == 0)
+        return 0;
+}
+
 //COMPLEJIDAD SIN EL TAD
 /*contarApariciones() recorre los N elementos de la cola, por lo que tiene complejidad lineal.
 Dentro de c_ej4_colanorepetidos() se usa c_ej2_copiar() de complejidad lineal  y dentro del primer while, que se ejecuta
