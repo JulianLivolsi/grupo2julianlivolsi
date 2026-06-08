@@ -43,6 +43,26 @@ bool c_ej3_iguales(Cola c1, Cola c2)
     return false; // Y retorno false
 }
 
+int ejercicio3()
+{
+    limpiarConsola();
+    srand(time(NULL));
+    printf("\n------ Ejercicio 3 - Son Iguales? ------\n");
+    Cola c1 = rellenarCola(-1);
+    Cola c2 = rellenarCola(-1);
+    printf("\nCola 1: \n");
+    c_mostrar(c1);
+    printf("\nCola 2: \n");
+    c_mostrar(c2);
+    printf("\n--> Las Colas son %s\n", c_ej3_iguales(c1, c2) ? "IGUALES" : "DIFERENTES");
+
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
+    if (eleccion == 1)
+        ejercicio3();   
+    else if (eleccion == 0)
+        return 0;
+}
+
 //COMPLEJIDAD SIN TENER EN CUENTA EL TAD
 /*El algoritmo usa 2 bucles while; el primero desencola los N elementos de la cola, siendo O(N); y el segundo
 devuelve los elemetos a sus respectivas colas, siendo tambien O(N). Tenemos entonces un algoritmo con complejidad 
