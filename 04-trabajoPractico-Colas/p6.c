@@ -60,6 +60,31 @@ Lista c_ej6_comunesapilaycola(Pila p, Cola c)
     return resultado;
 }
 
+int ejercicio6()
+{
+    limpiarConsola();
+    srand(time(NULL));
+    printf("\n------ Ejercicio 6 ------\n");
+    
+    Cola c = rellenarCola(-1);
+    printf("\nCola : \n");
+    c_mostrar(c);
+
+    Pila p = rellenarPila(-1);
+    printf("\nPila : \n");
+    p_mostrar(p);
+
+    Lista res = c_ej6_comunesapilaycola(p, c); 
+    printf("\nElementos comunes : \n");
+    l_mostrar(res);
+
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
+    if (eleccion == 1)
+        ejercicio6();
+    else if (eleccion == 0)
+        return 0;
+}
+
 //COMPLEJIDAD SIN EL TAD
 /*Siendo N la cantidad de elementos de la pila y M la cantidad de elementos de la cola, por cada elemento N se recorren todos los elementos M;
 de modo que la complejidad seria O(N*M). En el peor caso, donde N=M, tenemos que la complejidad del algoritmo es O(N2).
