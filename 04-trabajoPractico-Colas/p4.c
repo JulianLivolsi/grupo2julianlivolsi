@@ -56,3 +56,9 @@ Cola c_ej4_colanorepetidos(Cola c)
     }
     return res; // Si llego a esta linea es porque existe algun elemento no repetido en la original, por lo que retorno la cola resultado
 }
+
+//COMPLEJIDAD SIN EL TAD
+/*contarApariciones() recorre los N elementos de la cola, por lo que tiene complejidad lineal.
+Dentro de c_ej4_colanorepetidos() se usa c_ej2_copiar() de complejidad   y dentro del primer while, que se ejecuta
+N veces, por cada una se llama a contarApariciones(), lo que nos da O(N2). Finalmente, el ultimo while recorre
+tambien N elementos. En suma, la complejidad total es de 
