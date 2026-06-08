@@ -59,21 +59,44 @@ Cola c_ej4_colanorepetidos(Cola c)
 
 int ejercicio4()
 {
-    limpiarConsola();
-    srand(time(NULL));
-    printf("\n------ Ejercicio 4 ------\n");
-    Cola c = rellenarCola(-1);
-    printf("\nCola : \n");
-    c_mostrar(c);
-    Cola res = c_ej4_colanorepetidos(c);
-    printf("\nElementos no repetidos : \n");
-    c_mostrar(res);
+    int eleccion;
+    do
+    {
+        limpiarConsola();
+        srand(time(NULL));
+        printf("\n------ Ejercicio 4 ------\n");
+        
+        Cola c = rellenarCola(-1);
+        printf("\nCola : \n");
+        c_mostrar(c);
+        
+        Cola res = c_ej4_colanorepetidos(c);
+        printf("\nElementos no repetidos : \n");
+        c_mostrar(res);
 
-    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
-    if (eleccion == 1)
-        ejercicio4();
-    else if (eleccion == 0)
-        return 0;
+        eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
+        
+        if (c != NULL)
+        {
+            while (!c_es_vacia(c))
+            {
+                free(c_desencolar(c));
+            }
+            free(c);
+        }
+
+        if (res != NULL)
+        {
+            while (!c_es_vacia(res))
+            {
+                free(c_desencolar(res));
+            }
+            free(res);
+        }
+
+    } while (eleccion == 1);
+    
+    return 0;
 }
 
 //COMPLEJIDAD SIN EL TAD

@@ -62,27 +62,70 @@ Lista c_ej6_comunesapilaycola(Pila p, Cola c)
 
 int ejercicio6()
 {
-    limpiarConsola();
-    srand(time(NULL));
-    printf("\n------ Ejercicio 6 ------\n");
+    int eleccion;
+    do
+    {
+        limpiarConsola();
+        srand(time(NULL));
+        printf("\n------ Ejercicio 6 ------\n");
+        
+        Cola c = rellenarCola(-1);
+        printf("\nCola : \n");
+        c_mostrar(c);
+
+        Pila p = rellenarPila(-1);
+        printf("\nPila : \n");
+        p_mostrar(p);
+
+        Lista res = c_ej6_comunesapilaycola(p, c); 
+        printf("\nElementos comunes : \n");
+        l_mostrar(res);
+
+        eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
+        
+        if (c != NULL)
+        {
+            while (!c_es_vacia(c))
+            {
+                free(c_desencolar(c));
+            }
+            free(c);
+        }
+
+        if (p != NULL)
+        {
+            while (!p_es_vacia(p))
+            {
+                free(p_desapilar(p));
+            }
+            free(p);
+        }
+
+        if (res != NULL)
+        {
+            // Para liberar correctamente debemos recorrer la lista
+            Iterador it = iterador(res);
+            while (hay_siguiente(it))
+            {
+                TipoElemento te = siguiente(it);
+                if (te->valor != NULL)
+                {
+                    // Liberamos la estructura respuestaPosiciones
+                    free(te->valor); 
+                }
+            }
+            free(it); // Liberamos el iterador
+            
+            while(!l_es_vacia(res))
+            {
+                free(l_recuperar(res, 1)); l_eliminar(res, 1);
+            }
+            free(res);
+        }
+
+    } while (eleccion == 1);
     
-    Cola c = rellenarCola(-1);
-    printf("\nCola : \n");
-    c_mostrar(c);
-
-    Pila p = rellenarPila(-1);
-    printf("\nPila : \n");
-    p_mostrar(p);
-
-    Lista res = c_ej6_comunesapilaycola(p, c); 
-    printf("\nElementos comunes : \n");
-    l_mostrar(res);
-
-    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
-    if (eleccion == 1)
-        ejercicio6();
-    else if (eleccion == 0)
-        return 0;
+    return 0;
 }
 
 //COMPLEJIDAD SIN EL TAD

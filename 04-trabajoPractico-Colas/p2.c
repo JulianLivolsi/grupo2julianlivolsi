@@ -198,17 +198,19 @@ void ejercicio2()
     int eleccion = -1;
     while (eleccion != 0)
     {
-        eleccion = pedirEntero("\n\nSeleccione el ejercicio: A[Eliga 1], B[Eliga 2], C[Eliga 3], D[Eliga 4], E[Eliga 5], F[Eliga 6], (Eliga 0 para salir): ", 0, 6);
-        Cola auxiliar = c_crear();
-        Cola NuevaCola = c_crear();
+        eleccion = pedirEntero("\n\nSeleccione el ejercicio: A[Ingrese 1], B[Ingrese 2], C[Ingrese 3], D[Ingrese 4], E[Ingrese 5], F[Ingrese 6], (Ingrese 0 para salir): ", 0, 6);
+        Cola auxiliar = NULL;
+        Cola NuevaCola = NULL;
         int clave;
+
+        if (eleccion != 0) auxiliar = colaClon(cola);
+
         switch (eleccion)
         {
         case 1:
             limpiarConsola();
-            auxiliar = colaClon(cola);
-            printf("\nEjercicio A: Informar si un elemento dado se encuentra en la cola.:\n");
-            printf("\nCola origina: \n");
+            printf("\nEjercicio A: Informar si un elemento dado se encuentra en la cola:\n");
+            printf("\nCola original: \n");
             c_mostrar(auxiliar);
             printf("\n");
             clave = pedirEntero("Ingrese una clave a buscar: ", -1000, 1000);
@@ -223,22 +225,20 @@ void ejercicio2()
             break;
         case 2:
             limpiarConsola();
-            auxiliar = colaClon(cola);
             printf("\nEjercicio B: Agregar un nuevo elemento en una posición dada (colarse):\n");
-            printf("\nCola original\n");
+            printf("\nCola original: \n");
             c_mostrar(auxiliar);
             int posicion = pedirEntero("Ingrese la posicion en donde insertar (empezando desde 1): ", 1, c_contarElementos(cola) + 1);
             clave = pedirEntero("Ingrese la nueva clave: ", -1000, 1000);
             TipoElemento x = te_crear(clave);
             NuevaCola = c_ej2_colarelemento(auxiliar, posicion, x);
-            printf("\nNueva Cola:\n");
+            printf("\nNueva Cola: \n");
             c_mostrar(NuevaCola);
             break;
         case 3:
             limpiarConsola();
-            auxiliar = colaClon(cola);
             printf("\nEjercicio C: Dado un elemento sacarlo de la cola todas las veces que aparezca:\n");
-            printf("\nCola Original:\n");
+            printf("\nCola original:\n");
             c_mostrar(auxiliar);
             clave = pedirEntero("Ingrese la clave a eliminar: ", -1000, 1000);
             NuevaCola = c_ej2_sacarelemento(auxiliar, clave);
@@ -247,7 +247,6 @@ void ejercicio2()
             break;
         case 4:
             limpiarConsola();
-            auxiliar = colaClon(cola);
             printf("\nEjercicio D: Contar los elementos de la cola \n");
             printf("\nCola original: \n");
             c_mostrar(auxiliar);
@@ -256,18 +255,16 @@ void ejercicio2()
             break;
         case 5:
             limpiarConsola();
-            auxiliar = colaClon(cola);
             printf("\nEjercicio E: Realizar una copia de una cola \n");
-            printf("\nCola original:\n");
+            printf("\nCola original: \n");
             c_mostrar(auxiliar);
             printf("\n");
             NuevaCola = c_ej2_copiar(auxiliar);
-            printf("\nCola copiada:\n");
+            printf("\nCola copiada: \n");
             c_mostrar(NuevaCola);
             break;
         case 6:
             limpiarConsola();
-            auxiliar = colaClon(cola);
             printf("\nEjercicio F: Invertir el contenido de una cola \n");
             printf("\nCola original\n");
             c_mostrar(auxiliar);
@@ -277,4 +274,17 @@ void ejercicio2()
             c_mostrar(NuevaCola);
             break;
         }
+        if (auxiliar != NULL)
+        {
+            while(!c_es_vacia(auxiliar)) free(c_desencolar(NuevaCola));
+            free(NuevaCola);
+        }
     }
+    if (cola != NULL)
+    {
+        while (!c_es_vacia(cola)) free(c_desencolar(cola));
+        free(cola);
+    }
+
+    
+}

@@ -75,21 +75,44 @@ Cola c_ej5_divisortotal(Cola c)
 
 int ejercicio5()
 {
-    limpiarConsola();
-    srand(time(NULL));
-    printf("\n------ Ejercicio 5 ------\n");
-    Cola c = rellenarCola(-1);
-    printf("\nCola : \n");
-    c_mostrar(c);
-    Cola res = c_ej5_divisortotal(c)
-    printf("\nDivisores totales o parciales : \n");
-    c_mostrar(res);
+    int eleccion;
+    do
+    {
+        limpiarConsola();
+        srand(time(NULL));
+        printf("\n------ Ejercicio 5 ------\n");
+        
+        Cola c = rellenarCola(-1);
+        printf("\nCola : \n");
+        c_mostrar(c);
+        
+        Cola res = c_ej5_divisortotal(c); 
+        printf("\nDivisores totales o parciales : \n");
+        c_mostrar(res);
 
-    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
-    if (eleccion == 1)
-        ejercicio5();
-    else if (eleccion == 0)
-        return 0;
+        eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
+        
+        if (c != NULL)
+        {
+            while (!c_es_vacia(c))
+            {
+                free(c_desencolar(c));
+            }
+            free(c);
+        }
+
+        if (res != NULL)
+        {
+            while (!c_es_vacia(res))
+            {
+                free(c_desencolar(res));
+            }
+            free(res);
+        }
+
+    } while (eleccion == 1);
+    
+    return 0;
 }
 
 /*COMPLEJIDAD SIN EL TAD

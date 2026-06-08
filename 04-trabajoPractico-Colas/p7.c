@@ -144,31 +144,66 @@ Cola c_ej7_atenderclientes(Cola c1, Cola c2, Cola c3, int tiempoatencion)
 
 int ejercicio7()
 {
-    limpiarConsola();
-    srand(time(NULL));
-    printf("\n------ Ejercicio 7 ------\n");
+    int eleccion;
+    do
+    {
+        limpiarConsola();
+        srand(time(NULL));
+        printf("\n------ Ejercicio 7 ------\n");
+        
+        Cola c1 = rellenarCola(-1);
+        printf("\nCola 1 : \n");
+        c_mostrar(c1);
+
+        Cola c2 = rellenarCola(-1);
+        printf("\nCola 2 : \n");
+        c_mostrar(c2);
+
+        Cola c3 = rellenarCola(-1);
+        printf("\nCola 3 : \n");
+        c_mostrar(c3);
+
+        int tiempoatencion = pedirEntero("Ingrese el tiempo de atencion (1 a 100): ", 1, 100);
+
+        Cola res = c_ej7_atenderclientes(c1, c2, c3, tiempoatencion);
+        printf("\nResultados : \n");
+        c_mostrar(res);
+
+        eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
+        
+        if (c1 != NULL)
+        {
+            while (!c_es_vacia(c1)) free(c_desencolar(c1));
+            free(c1);
+        }
+        if (c2 != NULL)
+        {
+            while (!c_es_vacia(c2)) free(c_desencolar(c2));
+            free(c2);
+        }
+        if (c3 != NULL)
+        {
+            while (!c_es_vacia(c3)) free(c_desencolar(c3));
+            free(c3);
+        }
+
+        if (res != NULL)
+        {
+            while (!c_es_vacia(res))
+            {
+                TipoElemento te = c_desencolar(res);
+                
+                if (te->valor != NULL)
+                {
+                    free(te->valor); 
+                }
+                
+                free(te); 
+            }
+            free(res);
+        }
+
+    } while (eleccion == 1);
     
-    Cola c1 = rellenarCola(-1);
-    printf("\nCola 1 : \n");
-    c_mostrar(c);
-
-    Cola c2 = rellenarCola(-1);
-    printf("\nCola 2 : \n");
-    c_mostrar(c);
-
-    Cola c3 = rellenarCola(-1);
-    printf("\nCola 3 : \n");
-    c_mostrar(c);
-
-    int tiempoatencion = pedirEntero("Ingrese el tiempo de atencion (1 a 100): ", 1, 100);
-
-    Cola res = c_ej7_atenderclientes(c1, c2, c3, tiempoatencion);
-    printf("\nResultados : \n");
-    c_mostrar(res);
-
-    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
-    if (eleccion == 1)
-        ejercicio7();
-    else if (eleccion == 0)
-        return 0;
+    return 0;
 }
