@@ -36,4 +36,10 @@ void p_intercambiar(Pila P, Pila Paux);
 int p_tamanio(Pila P);
 // Retorna el tamanio de la pila
 
+//-------------- Colas -----------------------//
+Cola rellenarCola(int elementos);
+// Rellena Cola, si elementos = -1, pregunta el largo
+
+
+
 #endif // AUXILIARES_H
