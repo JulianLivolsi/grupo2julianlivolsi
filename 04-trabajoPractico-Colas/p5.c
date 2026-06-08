@@ -73,6 +73,25 @@ Cola c_ej5_divisortotal(Cola c)
 
 }
 
+int ejercicio5()
+{
+    limpiarConsola();
+    srand(time(NULL));
+    printf("\n------ Ejercicio 5 ------\n");
+    Cola c = rellenarCola(-1);
+    printf("\nCola : \n");
+    c_mostrar(c);
+    Cola res = c_ej5_divisortotal(c)
+    printf("\nDivisores totales o parciales : \n");
+    c_mostrar(res);
+
+    int eleccion = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
+    if (eleccion == 1)
+        ejercicio5();
+    else if (eleccion == 0)
+        return 0;
+}
+
 /*COMPLEJIDAD SIN EL TAD
 contadorDivisionesExactas() recorre N elementos, por lo que es O(N). c_ej5_divisortotal recorre N elementos y por cada uno llama a contadorDivisionesExactas()
 de modo que el algoritmo tiene complejidad cuadratica O(N2).
