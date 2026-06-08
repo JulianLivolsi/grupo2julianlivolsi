@@ -43,6 +43,7 @@ void c_intercambiar(Cola c, Cola aux);
 // Pasa el contenido de una cola C a otra
 int c_contarElementos(Cola c);
 // Cuenta la cantidad de elementos de una cola
-
+Cola colaClon(Cola c);
+// Clona una cola sin perder la original
 
 #endif // AUXILIARES_H
