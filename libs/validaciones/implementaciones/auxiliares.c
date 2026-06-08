@@ -370,3 +370,28 @@ Cola rellenarCola(int elementos)
 
     return resultado;
 }
+
+Cola colaClon(Cola c)
+{
+    Cola aux = c_crear();
+    Cola clon = c_crear();
+
+    while (!c_es_vacia(c))
+    {
+        TipoElemento elemento = c_desencolar(c);
+
+        TipoElemento copia1 = te_crear(elemento->clave);
+        TipoElemento copia2 = te_crear(elemento->clave);
+
+        c_encolar(aux, copia1);   // guardar para restaurar
+        c_encolar(clon, copia2);  // construir clon
+    }
+
+    while (!c_es_vacia(aux))
+    {
+        TipoElemento elemento = c_desencolar(aux);
+        c_encolar(c, elemento);   // restaurar original
+    }
+
+    return clon;
+}
