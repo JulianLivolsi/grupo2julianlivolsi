@@ -39,7 +39,10 @@ int p_tamanio(Pila P);
 //-------------- Colas -----------------------//
 Cola rellenarCola(int elementos);
 // Rellena Cola, si elementos = -1, pregunta el largo
-
+void c_intercambiar(Cola c, Cola aux);
+// Pasa el contenido de una cola C a otra
+int c_contarElementos(Cola c);
+// Cuenta la cantidad de elementos de una cola
 
 
 #endif // AUXILIARES_H
