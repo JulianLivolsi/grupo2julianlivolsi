@@ -59,6 +59,12 @@ Cola c_ej4_colanorepetidos(Cola c)
 
 //COMPLEJIDAD SIN EL TAD
 /*contarApariciones() recorre los N elementos de la cola, por lo que tiene complejidad lineal.
-Dentro de c_ej4_colanorepetidos() se usa c_ej2_copiar() de complejidad   y dentro del primer while, que se ejecuta
+Dentro de c_ej4_colanorepetidos() se usa c_ej2_copiar() de complejidad lineal  y dentro del primer while, que se ejecuta
 N veces, por cada una se llama a contarApariciones(), lo que nos da O(N2). Finalmente, el ultimo while recorre
-tambien N elementos. En suma, la complejidad total es de 
+tambien N elementos. En suma, la complejidad total es de O(N)+O(N2)+O(N), es decir O(N2).*/
+
+//COMPLEJIDAD SEGUN OPERACIONES DEL TAD
+/*Arreglos: Siendo que desencolar tiene complejidad lineal, contarApariciones() sera O(N2), de modo que al ser llamada N veces en la funcion principal, resultara
+    en una complejidad de O(N3).
+Arreglos circulares: como todas las operaciones involucradas son de complejidad constante, el algoritmo continuara siendo O(N2).
+Apuntadores: Dado que encolar es O(N), tenemos el mismo caso que en Arreglos, de manera que la complejidad sera O(N3).*/
