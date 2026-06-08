@@ -186,3 +186,95 @@ Cola c_ej2_invertir(Cola c)
     return Cres; // Retornamos la cola respuesta
 }
 
+void ejercicio2()
+{
+    limpiarConsola();
+    srand(time(NULL));
+    printf("\n------ Ejercicio 2 ------\n");
+
+    Cola cola = rellenarCola(-1);
+    c_mostrar(cola);
+
+    int eleccion = -1;
+    while (eleccion != 0)
+    {
+        eleccion = pedirEntero("\n\nSeleccione el ejercicio: A[Eliga 1], B[Eliga 2], C[Eliga 3], D[Eliga 4], E[Eliga 5], F[Eliga 6], (Eliga 0 para salir): ", 0, 6);
+        Cola auxiliar = c_crear();
+        Cola NuevaCola = c_crear();
+        int clave;
+        switch (eleccion)
+        {
+        case 1:
+            limpiarConsola();
+            auxiliar = colaClon(cola);
+            printf("\nEjercicio A: Informar si un elemento dado se encuentra en la cola.:\n");
+            printf("\nCola origina: \n");
+            c_mostrar(auxiliar);
+            printf("\n");
+            clave = pedirEntero("Ingrese una clave a buscar: ", -1000, 1000);
+            if (c_ej2_existeclave(auxiliar, clave))
+            {
+                printf("\nLa clave ingresada EXISTE dentro de la cola.");
+            }
+            else
+            {
+                printf("\nLa clave ingresada NO EXISTE dentro de la cola.");
+            }
+            break;
+        case 2:
+            limpiarConsola();
+            auxiliar = colaClon(cola);
+            printf("\nEjercicio B: Agregar un nuevo elemento en una posición dada (colarse):\n");
+            printf("\nCola original\n");
+            c_mostrar(auxiliar);
+            int posicion = pedirEntero("Ingrese la posicion en donde insertar (empezando desde 1): ", 1, c_contarElementos(cola) + 1);
+            clave = pedirEntero("Ingrese la nueva clave: ", -1000, 1000);
+            TipoElemento x = te_crear(clave);
+            NuevaCola = c_ej2_colarelemento(auxiliar, posicion, x);
+            printf("\nNueva Cola:\n");
+            c_mostrar(NuevaCola);
+            break;
+        case 3:
+            limpiarConsola();
+            auxiliar = colaClon(cola);
+            printf("\nEjercicio C: Dado un elemento sacarlo de la cola todas las veces que aparezca:\n");
+            printf("\nCola Original:\n");
+            c_mostrar(auxiliar);
+            clave = pedirEntero("Ingrese la clave a eliminar: ", -1000, 1000);
+            NuevaCola = c_ej2_sacarelemento(auxiliar, clave);
+            printf("\nNueva Cola:\n");
+            c_mostrar(NuevaCola);
+            break;
+        case 4:
+            limpiarConsola();
+            auxiliar = colaClon(cola);
+            printf("\nEjercicio D: Contar los elementos de la cola \n");
+            printf("\nCola original: \n");
+            c_mostrar(auxiliar);
+            int cantidad = c_ej2_contarelementos(auxiliar);
+            printf("\nLa Cola tiene %d elementos:\n",cantidad);
+            break;
+        case 5:
+            limpiarConsola();
+            auxiliar = colaClon(cola);
+            printf("\nEjercicio E: Realizar una copia de una cola \n");
+            printf("\nCola original:\n");
+            c_mostrar(auxiliar);
+            printf("\n");
+            NuevaCola = c_ej2_copiar(auxiliar);
+            printf("\nCola copiada:\n");
+            c_mostrar(NuevaCola);
+            break;
+        case 6:
+            limpiarConsola();
+            auxiliar = colaClon(cola);
+            printf("\nEjercicio F: Invertir el contenido de una cola \n");
+            printf("\nCola original\n");
+            c_mostrar(auxiliar);
+            printf("\n");
+            NuevaCola = c_ej2_invertir(auxiliar);
+            printf("\nCola invertida:\n");
+            c_mostrar(NuevaCola);
+            break;
+        }
+    }
