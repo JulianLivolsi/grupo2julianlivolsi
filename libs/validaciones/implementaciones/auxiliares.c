@@ -298,3 +298,75 @@ int c_contarElementos(Cola c)
     free(aux); // Libero la memoria de la cola auxiliar
     return resultado; // Retorno el contador
 }
+
+Cola rellenarCola(int elementos)
+{
+    // Si recibe -1, preguntar la cantidad de elementos
+    if (elementos == -1)
+    {
+        elementos = pedirEntero("¿Cual es el largo de esta cola?: ", 0, 10);
+    }
+
+    // Si no hay elementos, devolver cola vacía
+    if (elementos == 0)
+    {
+        return c_crear();
+    }
+
+    Cola resultado = c_crear();
+
+    int aleatorio = pedirEntero(
+        "¿Quiere llenar la cola aleatoriamente? -> No(0) | Si(1): ",
+        0, 1);
+
+    if (aleatorio == 1)
+    {
+        int r_min = pedirEntero(
+            "Valor minimo de los elementos: ",
+            -1000, 1000);
+
+        int r_max = pedirEntero(
+            "Valor maximo de los elementos: ",
+            -1000, 1000);
+
+        while (r_max < r_min)
+        {
+            printf("El valor maximo debe ser mayor o igual al minimo.\n");
+
+            r_max = pedirEntero(
+                "Valor maximo de los elementos: ",
+                -1000, 1000);
+        }
+
+        for (int j = 0; j < elementos; j++)
+        {
+            int valor = rand() % (r_max - r_min + 1) + r_min;
+
+            TipoElemento elemento = te_crear(valor);
+
+            c_encolar(resultado, elemento);
+        }
+    }
+    else
+    {
+        for (int j = 0; j < elementos; j++)
+        {
+            char mensaje[100];
+
+            sprintf(
+                mensaje,
+                "Ingrese el elemento %d: ",
+                j + 1);
+
+            int valor = pedirEntero(
+                mensaje,
+                -1000, 1000);
+
+            TipoElemento elemento = te_crear(valor);
+
+            c_encolar(resultado, elemento);
+        }
+    }
+
+    return resultado;
+}
