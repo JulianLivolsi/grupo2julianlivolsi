@@ -60,6 +60,13 @@ Lista c_ej6_comunesapilaycola(Pila p, Cola c)
     return resultado;
 }
 
-//COMPLEJIDAD
+//COMPLEJIDAD SIN EL TAD
 /*Siendo N la cantidad de elementos de la pila y M la cantidad de elementos de la cola, por cada elemento N se recorren todos los elementos M;
-de modo que la complejidad seria O(N*M). En el peor caso, donde N=M, tenemos que la complejidad del algoritmos es O(N2)*/
+de modo que la complejidad seria O(N*M). En el peor caso, donde N=M, tenemos que la complejidad del algoritmo es O(N2).
+    
+COMPLEJIDAD SEGUN IMPLEMENTACION DEL TAD
+Arreglos: como desencolar es de complejidad lineal, la funcion buscar_y_registrar() es de complejidad cuadratica. Dado que la funcion principal recorre los
+N elementos de la pila y llama a buscar_y_registrar() por cada uno, tenemos que la complejidad final es O(N3).
+Arreglos circulares: Al ser de complejidad constante todas las operaciones involucradas, el algoritmo continua teniendo comlplejidad cuadratica. 
+Apuntadores:como encolar es de complejidad lineal, buscar_y_registrar() sera O(N2). Como el algoritmo recorre los elementos de la pila y llama 
+a buscar_y_registrar() por cada uno, se obtiene una complejidad de O(N3).*/
