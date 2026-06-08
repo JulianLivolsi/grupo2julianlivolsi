@@ -42,3 +42,17 @@ bool c_ej3_iguales(Cola c1, Cola c2)
     free(aux); // Si se llega a esta linea, ambas colas no tenian igual longitud por lo que primero libero la cola auxiliar
     return false; // Y retorno false
 }
+
+//COMPLEJIDAD SIN TENER EN CUENTA EL TAD
+/*El algoritmo usa 2 bucles while; el primero desencola los N elementos de la cola, siendo O(N); y el segundo
+devuelve los elemetos a sus respectivas colas, siendo tambien O(N). Tenemos entonces un algoritmo con complejidad 
+O(2N), es decir O(N) (Lineal).*/
+
+//COMPLEJIDAD SEGUN IMPLEMENTACION DEL TAD
+
+/*Arreglos: como desencolar() tiene complejidad O(N) y se lo usa en ambos while, cada uno tendra complejidad
+cuadratica. Como resultado, el algoritmo tendria complejidad O(N2).
+Arreglos Circulares: todas las operaciones involucradas son de complejidad constante, por lo que el algoritmo
+continua teniendo complejidad lineal O(N).
+Apuntadores: aqui, encolar tiene complejidad lineal y dado que se utiliza en cada bucle while, obtenemos una
+complejidad del algoritmo O(N2).*/
