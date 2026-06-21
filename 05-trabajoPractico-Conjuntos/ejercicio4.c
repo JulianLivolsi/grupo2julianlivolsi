@@ -40,7 +40,6 @@ bool c_ej4_transitividad(Conjunto A, Conjunto B, Conjunto C) {
     // Si ambas se cumplen, entonces A A es subconjunto de C
     return es_subconjunto(A, C);
 }
-}
 
 void ejercicio4()
 {
