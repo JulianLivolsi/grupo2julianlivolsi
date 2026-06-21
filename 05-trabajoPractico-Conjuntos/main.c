@@ -52,7 +52,7 @@ int main()
             break;
         case 8:
             ejercicio8();
-            break
+            break;
         }
     }
     return 0;
