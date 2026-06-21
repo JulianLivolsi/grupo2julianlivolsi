@@ -427,3 +427,24 @@ Conjunto rellenarConjunto(int elementos)
     }
     return resultado;
 }
+
+Lista cargarColeccionConjuntos(int N) {
+
+    Lista listaConjuntos = l_crear();
+
+    for (int i = 1; i <= N; i++) {
+
+        char mensaje[100];
+        sprintf(mensaje, "Ingrese el largo del conjunto %d: ", i);
+
+        int M = pedirEntero(mensaje, 1, 10);
+
+        Conjunto c = rellenarConjunto(M);
+
+        TipoElemento te = te_crear_con_valor(i, c);
+
+        l_agregar(listaConjuntos, te);
+    }
+
+    return listaConjuntos;
+}
