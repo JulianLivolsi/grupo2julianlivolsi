@@ -3,6 +3,8 @@
 #include <time.h>
 #include "tp_colas.h"
 
+#include "../libs/validaciones/headers/AUXILIARES.h"
+
 // A
 bool c_ej2_existeclave(Cola c, int clave)
 {
