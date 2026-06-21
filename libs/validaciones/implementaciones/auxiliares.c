@@ -395,3 +395,35 @@ Cola colaClon(Cola c)
 
     return clon;
 }
+//------------------------------------ Conjuntos ------------------------------------//
+Conjunto rellenarConjunto(int elementos)
+{
+    // llena un conjunto. el parametro elementos representa el largo del conjunto
+    // si elementos es pasado con el como -1 pregunta el largo al usuario
+    if (elementos == -1)
+    {
+        elementos = pedirEntero("Cual es el largo de este conjunto: ", 1, 100);
+    }
+    Conjunto resultado = cto_crear();
+    int aleatorio = pedirEntero("Quiere llenar el conjunto aleatoriamente? -> No(0) | Si(1): ", 0, 1);
+    if (aleatorio == 1)
+    {
+        for (int j = 0; j < elementos; j++)
+        {
+            TipoElemento random = te_crear(rand() % 20);
+            cto_agregar(resultado, random);
+        }
+    }
+    else
+    {
+        for (int j = 0; j < elementos; j++)
+        {   
+            char mensaje[100];
+            sprintf(mensaje, "Ingrese el elemento %i: ", j + 1);
+            int elem = pedirEntero(mensaje, -1000, 1000);
+            TipoElemento elemento = te_crear(elem);
+            cto_agregar(resultado, elemento);
+        }
+    }
+    return resultado;
+}
