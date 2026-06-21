@@ -3,6 +3,9 @@
 #include <time.h>
 #include "tp_colas.h"
 
+#include "../libs/validaciones/headers/AUXILIARES.h"
+
+
 int contadorDivisionesExactas(Cola c, int clave) // Funcion auxiliar que cuenta la cantidad de divisiones exactas de una clave en una cola
 {
     if (clave == 0) return 0;
