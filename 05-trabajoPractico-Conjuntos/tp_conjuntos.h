@@ -51,7 +51,7 @@ bool c_ej6_subconjuntopropio(Conjunto A, Conjunto B);
 	Determinar la complejidad algorítmica.
 	Imprimir el resultado en la función.
 */
-void c_ej7_subconjtotalparcial(Conjunto A, Conjunto B, Conjunto B);
+void c_ej7_subconjtotalparcial(Conjunto A, Conjunto B, Conjunto C);
 
 /**
 8.	Dados dos conjuntos de números naturales se pide determinar si son iguales sin importar la posición 
