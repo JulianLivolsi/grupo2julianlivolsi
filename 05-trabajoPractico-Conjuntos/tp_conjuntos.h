@@ -30,20 +30,20 @@ Conjunto c_ej3_intersecciones(Lista l_de_conjuntos);
 4.	Desarrollar un algoritmo que dado tres conjuntos puedan demostrar la propiedad de la transitividad:  
 	“si A es subconjunto de B y B a su vez es subconjunto de C, entonces A es subconjunto de C”.
 */
-bool c_ej4_transitividad(Conjunto A, Conjunoto B, Conjunto C);
+bool c_ej4_transitividad(Conjunto A, Conjunto B, Conjunto C);
 
 /**
 5.	Desarrollar un algoritmo capaz de resolver la diferencia simétrica (por la clave) entre dos conjuntos. 
 	La diferencia simétrica es una operación entre dos conjuntos donde el conjunto resultante está conformado 
 	por los elementos no comunes a los dos conjuntos.
 */
-Conjunto c_ej5_dif_simetrica(Conjunto A, Conjunoto B);
+Conjunto c_ej5_dif_simetrica(Conjunto A, Conjunto B);
 
 /**
 6.	Dados dos conjuntos de números naturales se pide determinar si uno es subconjunto propio del otro.  
 	Determinar la complejidad algorítmica
 */
-bool c_ej6_subconjuntopropio(Conjunto A, Conjunoto B);
+bool c_ej6_subconjuntopropio(Conjunto A, Conjunto B);
 
 /**
 7.	Dados 3 conjuntos determinar si alguno es un subconjunto parcial o total del otro.  
@@ -51,13 +51,13 @@ bool c_ej6_subconjuntopropio(Conjunto A, Conjunoto B);
 	Determinar la complejidad algorítmica.
 	Imprimir el resultado en la función.
 */
-void c_ej7_subconjtotalparcial(Conjunto A, Conjunoto B, Conjunoto B);
+void c_ej7_subconjtotalparcial(Conjunto A, Conjunto B, Conjunto B);
 
 /**
 8.	Dados dos conjuntos de números naturales se pide determinar si son iguales sin importar la posición 
 	de sus elementos.  
 	Determinar la complejidad algorítmica.
 */
-bool c_ej8_soniguales(Conjunto A, Conjunoto B);
+bool c_ej8_soniguales(Conjunto A, Conjunto B);
 
 #endif // TP_CONJUNTOS_H
