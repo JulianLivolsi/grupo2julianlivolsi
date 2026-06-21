@@ -52,5 +52,6 @@ Cola colaClon(Cola c);
 //-------------- Conjuntos -----------------------//
 Conjunto rellenarConjunto(int elementos);
 
+Lista cargarColeccionConjuntos(int N);
 
 #endif // AUXILIARES_H
