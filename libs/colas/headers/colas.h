@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include "../../tipoElemento/headers/tipo_elemento.h"
 
-static const int TAMANIO_MAXIMO = 10;
+//static const int TAMANIO_MAXIMO = 10;
 
 struct ColaRep;
 typedef struct ColaRep *Cola;
