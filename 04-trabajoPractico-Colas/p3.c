@@ -3,6 +3,9 @@
 #include <time.h>
 #include "tp_colas.h"
 
+#include "../libs/validaciones/headers/AUXILIARES.h"
+
+
 bool c_ej3_iguales(Cola c1, Cola c2) 
 {
     if (c_es_vacia(c1) && c_es_vacia(c2)) return true; // Si ambas colas son vacias retorna true
