@@ -10,6 +10,7 @@
 #include "../../pilas/headers/pilas.h"
 #include "../../tipoElemento/headers/tipo_elemento.h"
 #include "../../colas/headers/colas.h"
+#include "../../conjuntos/headers/conjuntos.h"
 
 
 //------------------------------------ Validaciones de entreda ------------------------------------//
