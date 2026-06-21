@@ -3,6 +3,9 @@
 #include <time.h>
 #include "tp_colas.h"
 
+#include "../libs/validaciones/headers/AUXILIARES.h"
+
+
 typedef struct
 {
     int idCliente;
