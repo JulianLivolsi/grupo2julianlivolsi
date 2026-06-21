@@ -2,7 +2,7 @@
 #define TP_CONJUNTOS_H
 
 #include <stdbool.h>
-#include "../libs/colas/headers/conjuntos.h"
+#include "../libs/conjuntos/headers/conjuntos.h"
 #include "../libs/listas/headers/listas.h"
 #include "../libs/tipoElemento/headers/tipo_elemento.h"
 #include "../libs/validaciones/headers/AUXILIARES.h"
