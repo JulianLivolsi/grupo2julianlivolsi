@@ -3,6 +3,8 @@
 
 #include "../../listas/headers/listas.h"
 #include "../../pilas/headers/pilas.h"
+#include "../../colas/headers/colas.h"
+
 // Macros para el menu
 // #define MENU_MIN 0
 // #define MENU_MAX 10
