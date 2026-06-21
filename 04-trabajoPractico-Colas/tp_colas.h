@@ -6,6 +6,8 @@
 #include "../libs/colas/headers/colas.h"
 #include "../libs/listas/headers/listas.h"
 #include "../libs/pilas/headers/pilas.h"
+#include "../libs/tipoElemento/headers/tipo_elemento.h"
+#include "../libs/validaciones/headers/AUXILIARES.h"
 /**
     2.	Resolver los siguientes puntos:
  */
