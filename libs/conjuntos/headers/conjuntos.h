@@ -1,1 +1,37 @@
+#ifndef CONJUNTOS_H
+#define CONJUNTOS_H
 
+#include <stdbool.h>
+#include "../../tipoElemento/headers/tipo_elemento.h"
+#include "../../listas/headers/listas.h"
+
+static const int TAMANIO_MAXIMO = 100;
+
+struct ConjuntoRep;
+typedef struct ConjuntoRep *Conjunto;
+
+Conjunto cto_crear();
+
+bool cto_es_vacio(Conjunto conjunto);
+
+bool cto_es_lleno(Conjunto conjunto);
+
+int cto_cantidad_elementos(Conjunto conjunto);
+
+bool cto_agregar(Conjunto conjunto, TipoElemento elemento);
+
+bool cto_borrar(Conjunto conjunto, int clave);
+
+bool cto_pertenece(Conjunto conjunto, int clave);
+
+Conjunto cto_union(Conjunto conjunto_a, Conjunto conjunto_b);
+
+Conjunto cto_interseccion(Conjunto conjunto_a, Conjunto conjunto_b);
+
+Conjunto cto_diferencia(Conjunto conjunto_a, Conjunto conjunto_b);
+
+TipoElemento cto_recuperar(Conjunto conjunto, int posicion_ordinal);
+
+void cto_mostrar(Conjunto conjunto);
+
+#endif // CONJUNTOS_H
