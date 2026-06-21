@@ -3,6 +3,9 @@
 #include <time.h>
 #include "tp_colas.h"
 
+#include "../libs/validaciones/headers/AUXILIARES.h"
+
+
 int contarApariciones(Cola c, int clave) // Función auxiliar que cuenta la cantidad de apariciones de una clave en una cola
 {
     Cola aux = c_crear(); // Creo una cola auxiliar
