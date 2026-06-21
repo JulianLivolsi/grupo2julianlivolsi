@@ -67,7 +67,7 @@ void ejercicio4()
         cto_mostrar(c3);
 
 
-        if (c_ej4_transitividad(Conjunto A, Conjunto B, Conjunto C)){
+        if (c_ej4_transitividad(c1, c2, c3)){
             printf("\n La propiedad de la transitividad se cumple en estos conjuntos: \n");
         }else{
             printf("\n La propiedad de la transitividad no es valida en estos conjuntos: \n");
