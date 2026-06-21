@@ -4,6 +4,7 @@
 #include "../../listas/headers/listas.h"
 #include "../../pilas/headers/pilas.h"
 #include "../../colas/headers/colas.h"
+#include "../../conjuntos/headers/conjuntos.h"
 
 // Macros para el menu
 // #define MENU_MIN 0
@@ -47,5 +48,9 @@ int c_contarElementos(Cola c);
 // Cuenta la cantidad de elementos de una cola
 Cola colaClon(Cola c);
 // Clona una cola sin perder la original
+
+//-------------- Conjuntos -----------------------//
+Conjunto rellenarConjunto(int elementos);
+
 
 #endif // AUXILIARES_H
