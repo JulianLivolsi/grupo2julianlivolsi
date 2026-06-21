@@ -5,7 +5,7 @@
 #include "../../tipoElemento/headers/tipo_elemento.h"
 #include "../../listas/headers/listas.h"
 
-static const int TAMANIO_MAXIMO = 100;
+static const int TAMANIO_MAXIMO_CONJUNTOS = 100;
 
 struct ConjuntoRep;
 typedef struct ConjuntoRep *Conjunto;
