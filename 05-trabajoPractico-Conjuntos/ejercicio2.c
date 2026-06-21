@@ -30,10 +30,10 @@ void ejercicio2()
         srand(time(NULL));
         printf("\n----- Ejercicio 2: Operaciones sobre dos conjuntos -----\n");
 
-        int largo1 = pedirEntero("Ingrese el largo del conjunto A: ", 1, 100);
+        int largo1 = pedirEntero("Ingrese el largo del conjunto A: ", 1, 10);
         Conjunto c1 = rellenarConjunto(largo1);
 
-        int largo2 = pedirEntero("Ingrese el largo del conjunto B: ", 1, 100);
+        int largo2 = pedirEntero("Ingrese el largo del conjunto B: ", 1, 10);
         Conjunto c2 = rellenarConjunto(largo2);
 
         printf("\n### Conjunto A: \n");
