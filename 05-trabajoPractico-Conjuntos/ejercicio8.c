@@ -10,18 +10,15 @@
 
 bool es_subconjunto(Conjunto X, Conjunto Y) {
 
-    Iterador it = iterador(X->lista);
+    for (int i = 1; i <= cto_cantidad_elementos(X); i++) {
 
-    while (hay_siguiente(it)) {
-        TipoElemento e = siguiente(it);
+        TipoElemento e = cto_recuperar(X, i);
 
         if (!cto_pertenece(Y, e->clave)) {
-            free(it);
             return false;
         }
     }
 
-    free(it);
     return true;
 }
 
