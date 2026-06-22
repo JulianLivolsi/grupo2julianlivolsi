@@ -30,12 +30,12 @@ bool c_ej4_transitividad(Conjunto A, Conjunto B, Conjunto C) {
         return false;
     }
 
-    // Verifico B A es subconjunto de C
+    // Verifico B es subconjunto de C
     if (!es_subconjunto(B, C)) {
         return false;
     }
 
-    // Si ambas se cumplen, entonces A A es subconjunto de C
+    // Si ambas se cumplen, entonces A es subconjunto de C
     return es_subconjunto(A, C);
 }
 
