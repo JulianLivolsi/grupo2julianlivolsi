@@ -9,19 +9,18 @@
 #include "../libs/validaciones/headers/AUXILIARES.h"
 
 int contar_en_comun(Conjunto X, Conjunto Y) {
-    Iterador it = iterador(X->lista);
 
     int contador = 0;
 
-    while (hay_siguiente(it)) {
-        TipoElemento e = siguiente(it);
+    for (int i = 1; i <= cto_cantidad_elementos(X); i++) {
+
+        TipoElemento e = cto_recuperar(X, i);
 
         if (cto_pertenece(Y, e->clave)) {
             contador++;
         }
     }
 
-    free(it);
     return contador;
 }
 
