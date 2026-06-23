@@ -54,4 +54,6 @@ Conjunto rellenarConjunto(int elementos);
 
 Lista cargarColeccionConjuntos(int N);
 
+bool es_subconjunto(Conjunto X, Conjunto Y);
+
 #endif // AUXILIARES_H
