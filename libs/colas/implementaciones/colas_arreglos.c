@@ -13,7 +13,7 @@ struct ColaRep {
 
 Cola c_crear() {
     Cola nueva_cola = (Cola) malloc(sizeof(struct ColaRep));
-    nueva_cola->valores = calloc((TAMANIO_MAXIMO+1), sizeof(TipoElemento));
+    nueva_cola->valores = calloc((TAMANIO_MAXIMO_COLAS+1), sizeof(TipoElemento));
     nueva_cola->frente = 0;
     nueva_cola->final = 0;
     return nueva_cola;
@@ -21,7 +21,7 @@ Cola c_crear() {
 
 
 bool c_es_llena(Cola cola) {
-    return (cola->final == (TAMANIO_MAXIMO));
+    return (cola->final == (TAMANIO_MAXIMO_COLAS));
 }
 
 
