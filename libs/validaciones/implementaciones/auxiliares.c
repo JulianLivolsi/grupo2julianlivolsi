@@ -449,3 +449,19 @@ Lista cargarColeccionConjuntos(int N) {
 
     return listaConjuntos;
 }
+
+
+bool es_subconjunto(Conjunto X, Conjunto Y) {
+
+    for (int i = 1; i <= cto_cantidad_elementos(X); i++) {
+
+        TipoElemento e = cto_recuperar(X, i);
+
+        if (!cto_pertenece(Y, e->clave)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
