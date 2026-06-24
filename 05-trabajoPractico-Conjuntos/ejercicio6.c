@@ -23,6 +23,10 @@ bool c_ej6_subconjuntopropio(Conjunto A, Conjunto B) {
     return true;
 }
 
+/*COMPLEJIDAD: 
+el algoritmo tiene 2 bloques; el primero llama a es_subconjunto() cuya complejidad es O(N2) para cualquier implementacion de listas, y en el segundo llama a 
+cto_cantidad_elementos() de complejidad O(1) para cualquier implementacion de listas. Por lo tanto, la complejidad final sera Cuadratica O(N2)*/
+
 void ejercicio6()
 {
     int continuar;
