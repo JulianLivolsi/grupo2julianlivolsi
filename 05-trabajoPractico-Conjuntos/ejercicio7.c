@@ -82,6 +82,11 @@ void c_ej7_subconjtotalparcial(Conjunto A, Conjunto B, Conjunto C) {
     }
 }
 
+/*COMPLEJIDAD:
+la funcion auxiliar contar_en_comun() recorre N elementos, y por cada uno llama a una operacion de complejidad lineal, resultando en una complejidad cuadratica
+para cualquiera de las implementaciones de listas. Esta funcion se llama 6 veces en el algoritmo principal, ademas de llamar a cto_cantidad_elementos() que es
+de complejidad constante. Asi, la complejidad final sera 6*O(N2)=O(N2), complejidad cuadratica.*/
+
 void ejercicio7()
 {
     int continuar;
