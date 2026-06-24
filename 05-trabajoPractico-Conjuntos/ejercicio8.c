@@ -20,6 +20,11 @@ bool c_ej8_soniguales(Conjunto A, Conjunto B) {
     return es_subconjunto(A, B) && es_subconjunto(B, A);
 }
 
+/*COMPLEJIDAD:
+el algoritmo llama a cto_cantidad_elementos() que es de complejidad constante. Ademas, llama a es_subconjunto() que es de complejidad cuadratica. Asi, la
+complejidad funal sera O(1)+O(N2) = O(N2), es decir Complejidad Cuadratica. esta complejidad es la misma para cualquier implementacion de listas.
+*/
+
 void ejercicio8()
 {
     int continuar;
