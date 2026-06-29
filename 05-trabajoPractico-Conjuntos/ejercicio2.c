@@ -69,13 +69,13 @@ void ejercicio2()
         cto_mostrar(Interseccion);
 
         
-        Conjunto Diferencia = c_ej2_diferencia(c1, c2);
+        Conjunto Diferencia1 = c_ej2_diferencia(c1, c2);
         printf("\n Elementos que son diferentes entre los conjuntos A y B: \n");
-        cto_mostrar(Diferencia);
+        cto_mostrar(Diferencia1);
 
-         Diferencia = c_ej2_diferencia(c2, c1);
+        Conjunto Diferencia2 = c_ej2_diferencia(c2, c1);
         printf("\n Elementos que son diferentes entre los conjuntos B y A: \n");
-        cto_mostrar(Diferencia);
+        cto_mostrar(Diferencia2);
 
 
         continuar = pedirEntero("\nSalir (0) | Continuar (1): ", 0, 1);
