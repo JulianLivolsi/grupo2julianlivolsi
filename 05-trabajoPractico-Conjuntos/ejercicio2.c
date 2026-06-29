@@ -20,6 +20,12 @@ Conjunto c_ej2_diferencia(Conjunto A, Conjunto B) {
     return cto_diferencia(A, B);
 }
 
+Conjunto c_ej2_pertenece(Conjunto conjunto, int clave){
+     if (cto_pertenece(A, clave)){return true;}
+    else {return false;}
+}
+
+
 
 void ejercicio2()
 {
@@ -41,6 +47,18 @@ void ejercicio2()
         printf("### Conjunto B: \n");
         cto_mostrar(c2);
 
+            
+        int clave_buscar = pedirEntero("Ingrese el valor de la clave para verificar pertenencia: ", 1, 20);
+
+        Conjunto Pertenencia= c_ej2_pertenece(c1, clave_buscar):
+        if(Pertenencia){ printf("La Clave ingresada pertenece al conjunto A: \n");}
+        else{printf("La Clave ingresada no pertenece al conjunto A: \n");}
+
+        Conjunto Pertenencia= c_ej2_pertenece(c2, clave_buscar):
+        if(Pertenencia){ printf("La Clave ingresada pertenece al conjunto B: \n");}
+        else{printf("La Clave ingresada no pertenece al conjunto B: \n");}
+        
+        
         Conjunto Union = c_ej2_union(c1, c2);
         printf("\n Elementos que resultan de la union de los conjuntos A y B: \n");
         cto_mostrar(Union);
@@ -53,6 +71,10 @@ void ejercicio2()
         
         Conjunto Diferencia = c_ej2_diferencia(c1, c2);
         printf("\n Elementos que son diferentes entre los conjuntos A y B: \n");
+        cto_mostrar(Diferencia);
+
+        Conjunto Diferencia = c_ej2_diferencia(c2, c1);
+        printf("\n Elementos que son diferentes entre los conjuntos B y A: \n");
         cto_mostrar(Diferencia);
 
 
