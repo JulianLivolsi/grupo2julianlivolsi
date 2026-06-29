@@ -15,7 +15,7 @@
 Conjunto c_ej2_union(Conjunto A, Conjunto B);
 Conjunto c_ej2_interseccion(Conjunto A, Conjunto B);
 Conjunto c_ej2_diferencia(Conjunto A, Conjunto B);
-bool c_ej2_pertenece(Conjunto conjunto, int clave);
+bool c_ej2_pertenece(Conjunto A, int clave);
 
 
 /**
